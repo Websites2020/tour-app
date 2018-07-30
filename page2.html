@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js"></script>
+
+</head>
+<body onload="getData()">
+    <h1>Local</h1>
+    <button onclick="logout()">Log Out</button>
+    <h3>Tours to bid on</h3>
+    <ul>
+
+    </ul>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <p>Contact the poster</p>
+      <form id="email" method="post" enctype="text/plain">
+      Your Message to the poster:<br>
+      <input id="sendM" style="height: 200px; width: 500px;" type="text"><br>
+      <button type="button" onclick="send()">Submit</button>
+      </form>
+    </div>
+  
+  </div>
+
+</body>
+</html>
