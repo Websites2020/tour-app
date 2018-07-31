@@ -1,27 +1,46 @@
 function store(){
     console.log("this worked");
-    var one = document.getElementById("location");
-    localStorage.setItem("location", one.value);
-    var two = document.getElementById("description");
-    localStorage.setItem("description", two.value);
-    var three = document.getElementById("date");
-    localStorage.setItem("date", three.value);
-    var four = document.getElementById("time");
-    localStorage.setItem("time", four.value);
-    var five = document.getElementById("email");
-    localStorage.setItem("email", five.value);
+    var a = [document.getElementById("location").value];
+    a.push(localStorage.getItem('location'));
+    localStorage.setItem('location', a);
+
+    var b = [document.getElementById("description").value];
+    b.push(localStorage.getItem('description'));
+    localStorage.setItem('description', b);
+
+    var c = [document.getElementById("date").value];
+    c.push(localStorage.getItem('date'));
+    localStorage.setItem('date', c);
+
+    var d = [document.getElementById("time").value];
+    d.push(localStorage.getItem('time'));
+    localStorage.setItem('time', d);
+
+    var e = [document.getElementById("email").value];
+    e.push(localStorage.getItem('email'));
+    localStorage.setItem('email', e);
+
+    var f = [document.getElementById("offer").value];
+    f.push(localStorage.getItem('offer'));
+    localStorage.setItem('offer', f);
    };
 
 function getData(){
-    var storedValueOne = localStorage.getItem("location");
-    var storedValueTwo = localStorage.getItem("description");
-    var storedValueThree = localStorage.getItem("date");
-    var storedValueFour = localStorage.getItem("time");
 
-    $("ul").append(`<li>${storedValueOne}<br>${storedValueTwo}<br>${storedValueThree}<br>${storedValueFour}</li>`).append("<button id='myBtn'>Bid</button>")
+    var storedValueOne = localStorage.getItem("location").split(',');
+    var storedValueTwo = localStorage.getItem("description").split(',');
+    var storedValueThree = localStorage.getItem("date").split(',');
+    var storedValueFour = localStorage.getItem("time").split(',');
+    var storedValueSix = localStorage.getItem("offer").split(',');
 
+    for (var a in storedValueOne)
+    {
 
-var btn = document.getElementById("myBtn");
+    $("ul").append(`<li>Location: ${storedValueOne[a]}<br>Description: ${storedValueTwo[a]}<br>Date: ${storedValueThree[a]}<br>Time: ${storedValueFour[a]}<br>Offer: $${storedValueSix}</li>`).append(`<button id='myBtn${[a]}'>Bid</button>`)
+
+    
+
+var btn = document.getElementById(`myBtn${[a]}`);
 console.log(btn);
 var span = document.getElementsByClassName("close")[0];
 var modal = document.getElementById('myModal');
@@ -40,20 +59,35 @@ window.onclick = function(event) {
     }
 }
 
+    }
+
 }
 
 function send() {
     console.log("this works");
     var form = document.getElementById("email");
-    var email = localStorage.getItem("email");
-    var mailTo = `mailto:${email}`;
+    var email = localStorage.getItem("email").split(',');
+
+    for (var b in email)
+    {
+    var mailTo = `mailto:${email[b]}`;
     form.action = mailTo;
     form.submit()
-    alert("message sent")
+    alert("message being prepared")
     var modal = document.getElementById('myModal');
     modal.style.display = "none";
+    }
 }
 
 function logout(){
+    window.location.href = "./index.html";
+}
+
+function signup(){
+    window.location.href = "./create.html";
+}
+
+function addUser(){
+    alert("New User Added");
     window.location.href = "./index.html";
 }
