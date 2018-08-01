@@ -1,5 +1,3 @@
-$(document).ready(function(){
-
 function store(){
     console.log("this worked");
     var a = [document.getElementById("location").value];
@@ -81,13 +79,6 @@ function send() {
     }
 }
 
-$("#logout").click(function(){
-    // window.location.href = "./index.html";
-    $.get("/logout", function(){
-            
-          });
-})
-
 function signup(){
     window.location.href = "./create.html";
 }
@@ -96,5 +87,3 @@ function addUser(){
     alert("New User Added");
     window.location.href = "./index.html";
 }
-
-})

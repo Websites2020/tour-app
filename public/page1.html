@@ -14,7 +14,7 @@
 </head>
 <body>
     <h1>Tourist</h1>
-    <button id="logout">Log Out</button>
+    <button id="logout" onclick="window.location.href='/'">Log Out</button>
     <form>
         Location you would like to tour.<br>
         <input id="location" type="text"><br>
@@ -24,7 +24,8 @@
         <input id="date" type="date"><br>
         Desired Time<br>
         <input id="time" type="time"><br>
-        Best contact email<br>
+        Best contact email<span>&nbsp;(!)</span>
+        <div>This will be the email locals will contact you at about your tour.  It should not be the same as your account email, but rather an email that you don't mind sharing publicly.  If you need to set up a free temporary email address you can do so with Gmail, Yahoo! Mail or Hotmail.</div><br>
         <input id="email" type="email"><br>
         How much do you want to spend?<br>
         <input id="offer" type="text"><br>
