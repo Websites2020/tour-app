@@ -42,7 +42,7 @@
     cursor: pointer;
 }
 
-div {
+.noticebox {
     background-color: blue;
     width: 300px;
     padding: 10px;
@@ -50,10 +50,10 @@ div {
     color: white;
 }
 
-span {
+.notice {
     color: blue;
     font-weight: bold;
 }
-span:hover + div {
+.notice:hover + div {
     display: block;
 }

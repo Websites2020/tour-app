@@ -23,22 +23,27 @@ function store(){
     var f = [document.getElementById("offer").value];
     f.push(localStorage.getItem('offer'));
     localStorage.setItem('offer', f);
+
+    var g = [document.getElementById("state").value];
+    g.push(localStorage.getItem('state'));
+    localStorage.setItem('state', g);
    };
 
 function getData(){
+
+    
 
     var storedValueOne = localStorage.getItem("location").split(',');
     var storedValueTwo = localStorage.getItem("description").split(',');
     var storedValueThree = localStorage.getItem("date").split(',');
     var storedValueFour = localStorage.getItem("time").split(',');
     var storedValueSix = localStorage.getItem("offer").split(',');
+    var storedValueSeven = localStorage.getItem("state").split(',');
 
     for (var a in storedValueOne)
     {
 
-    $("ul").append(`<li>Location: ${storedValueOne[a]}<br>Description: ${storedValueTwo[a]}<br>Date: ${storedValueThree[a]}<br>Time: ${storedValueFour[a]}<br>Offer: $${storedValueSix}</li>`).append(`<button id='myBtn${[a]}'>Bid</button>`)
-
-    
+    $("ul").append(`<li>City: ${storedValueOne[a]}<br>State/Country: ${storedValueSeven[a]}<br>Description: ${storedValueTwo[a]}<br>Date: ${storedValueThree[a]}<br>Time: ${storedValueFour[a]}<br>Offer: $${storedValueSix[a]}</li>`).append(`<button id='myBtn${[a]}'>Bid</button>`)
 
 var btn = document.getElementById(`myBtn${[a]}`);
 console.log(btn);
@@ -73,7 +78,6 @@ function send() {
     var mailTo = `mailto:${email[b]}`;
     form.action = mailTo;
     form.submit()
-    alert("message being prepared")
     var modal = document.getElementById('myModal');
     modal.style.display = "none";
     }
