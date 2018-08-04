@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Tour With A Local</title>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
@@ -13,27 +13,43 @@
 
 </head>
 <body>
-    <h1>Tour with a local</h1>
-    <h3>Tourist Login</h3>
+<div id="loginForm">
+    <h1>Tour With A Local</h1>
+    <h3>Looking to request a tour? Log in as a tourist.</h3>
     <form action="/page1" method="get">
         Username: <input type="text"><br>
         Password: <input type="password"><br>
         <input type="submit" value="Submit">
     </form>
-    <h4>or post without an account</h4>
+    <h3>or post without an account</h3>
     <button onclick="window.location.href='/page1'">Post</button>
-    <br><br><br>
-    <h3>Local Login</h3>
+    <br><br><hr><br>
+    <h3>Looking to give a tour? Log in as a local.</h3>
     <form action="/page2" method="get">
         Username: <input type="text"><br>
         Password: <input type="password"><br>
         <input type="submit" value="Submit">
     </form>
-    <h4>or bid without an account</h4>
-    <button onclick="window.location.href='/page2'">Bid</button>
-    <br><br><br>
-    <button onclick="signup()">Sign up</button>
+    <h3>or search without an account</h3>
+    <button onclick="window.location.href='/page2'">Search</button>
+    <br><br>
+    
+</div>
+<div id="how">
+    <h3>How Tour With A Local works.</h3>
+    <p>
+        A tourist (anyone visiting a city or area) posts details about the destination they are visiting, the things they want to do and see when they are there, and how much they want to spend on doing those things.<br><br>
+        Locals can then search through postings of tour requests made by tourists and reach out to the poster in helping them meet their travel plans.<br><br>
+        Tourists benefit by getting a personallized tour of the city they're visiting at a price that fits their budget.<br><br>
+        Locals benefit by making extra income showing people around their city.<br><br>
+        Both parties benefit by making a connection to someone they might not have ever met.<br><br>
+        <button onclick="signup()">Sign up</button>
+    </p>
+</div>
 </body>
-<hr>
-<footer>Daniel Button &copy; 2018</footer>
+<div class="footer">
+    <br>
+    <hr>
+    <footer>Daniel Button &copy; 2018</footer>
+</div>
 </html>
