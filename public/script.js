@@ -1,5 +1,7 @@
 function store(){
     console.log("this worked");
+    // alert("tour request submitted.")
+
     var a = [document.getElementById("location").value];
     a.push(localStorage.getItem('location'));
     localStorage.setItem('location', a);
@@ -27,6 +29,9 @@ function store(){
     var g = [document.getElementById("state").value];
     g.push(localStorage.getItem('state'));
     localStorage.setItem('state', g);
+
+    
+    location.reload();
    };
 
 function getData(){
@@ -43,7 +48,7 @@ function getData(){
     for (var a in storedValueOne)
     {
 
-    $("ul").append(`<li>City: ${storedValueOne[a]}<br>State/Country: ${storedValueSeven[a]}<br>Description: ${storedValueTwo[a]}<br>Date: ${storedValueThree[a]}<br>Time: ${storedValueFour[a]}<br>Offer: $${storedValueSix[a]}</li>`).append(`<button id='myBtn${[a]}'>Reach Out</button>`)
+    $("ul").append(`<li>City: ${storedValueOne[a]}<br>State/Country: ${storedValueSeven[a]}<br>Description: ${storedValueTwo[a]}<br>Date: ${storedValueThree[a]}<br>Time: ${storedValueFour[a]}<br>Offer: $${storedValueSix[a]}</li>`).append(`<button id='myBtn${[a]}'>Contact</button>`)
 
 var btn = document.getElementById(`myBtn${[a]}`);
 console.log(btn);
@@ -91,3 +96,7 @@ function addUser(){
     alert("New User Added");
     window.location.href = "./index.html";
 }
+
+function googleTranslateElementInit() {
+    new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+  }

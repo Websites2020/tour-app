@@ -8,14 +8,20 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
     <link rel="stylesheet" href="./style.css">
     <script src="./script.js"></script>
 
 </head>
 <body onload="getData()">
-    <h1>Local</h1>
-    <button onclick="window.location.href='/'">Log Out</button>
-    <h3>Tours to bid on</h3>
+    <header>
+    <h1>Local
+            <div id="google_translate_element"></div>
+    </h1>
+    <button onclick="window.location.href='/'">Home</button>
+    </header>
+    <h2>Tours to bid on</h2>
     <h4>Press <code>ctrl-f</code> (PC) or <code>cmd-f</code> (mac) to search results.</h4>
     <ul>
 
@@ -30,7 +36,7 @@
       <p>Contact the poster</p>
       <form id="email" method="post" enctype="text/plain">
       Your Message to the poster:<br>
-      <input id="sendM" style="height: 200px; width: 500px;" type="text"><br>
+      <textarea id="sendM" cols="100" rows="10"></textarea><br>
       <button type="button" onclick="send()">Submit</button>
       </form>
     </div>

@@ -1,3 +1,8 @@
+#google_translate_element {
+    float: right;
+    margin: 0 30px 0 0;
+}
+
 #loginForm {
     float: left;
 }
@@ -5,7 +10,7 @@
 #how {
     float: left;
     width: 700px;
-    padding: 60px 50px 60px 60px;
+    padding: 0 50px 60px 60px;
 }
 
 .footer {
@@ -66,7 +71,7 @@ button {
 
 .noticebox {
     background-color: blue;
-    width: 300px;
+    width: 400px;
     padding: 10px;
     display: none;
     color: white;

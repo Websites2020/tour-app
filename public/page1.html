@@ -8,31 +8,42 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
     <link rel="stylesheet" href="./style.css">
     <script type="text/javascript" src="./script.js"></script>
 
 </head>
 <body>
-    <h1>Tourist</h1>
-    <button id="logout" onclick="window.location.href='/'">Log Out</button>
-    <form>
+    <header>
+    <h1>Tourist
+            <div id="google_translate_element"></div>
+    </h1>
+    <button id="logout" onclick="window.location.href='/'">Home</button>
+    </header>
+    <br>
+    <form onsubmit="store()">
         What city would you like your tour to be in?<br>
-        <input id="location" type="text"><br>
-        What state or country would you like your tour to be in?<br>
-        <input id="state" type="text"><br>
+        <input id="location" type="text" required><br>
+        What state or country do you want your tour to be in?<br>
+        <input id="state" type="text" required><br>
         What do you want to see/do on your tour?<br>
-        <textarea id="description" class="large-text-box" type="text" cols="40" rows="10"></textarea><br>
+        <textarea id="description" class="large-text-box" type="text" cols="40" rows="10" required></textarea><br>
         What is your desired date for this tour?<br>
-        <input id="date" type="date"><br>
+        <input id="date" type="date" required><br>
         Desired time?<br>
-        <input id="time" type="time"><br>
+        <input id="time" type="time" required><br>
         What is the best contact email?<span class="notice">&nbsp;(!)</span>
-        <div class="noticebox">This will be the email locals will contact you at about your tour.  It should not be the same as your account email, but rather an email that you don't mind sharing publicly.  If you need to set up a free temporary email address you can do so with Gmail, Yahoo! Mail or Hotmail.</div><br>
-        <input id="email" type="email"><br>
+        <div class="noticebox">This will be the email locals will contact you at about your tour and will be publicly visible.  If you need to set up a free temporary email address you can do so with Gmail, Yahoo! or Hotmail.</div><br>
+        <input id="email" type="email" required><br>
         How much do you want to spend?<br>
-        <input id="offer" type="number"><br>
-        <button type="button" onclick="store()">Submit</button>
+        <input id="offer" type="number" required><br>
+        <!-- <button type="button" onclick="store()">Submit</button> -->
+        <input type="submit">
     </form>
+    <script>
+    
+    </script>
 </body>
 <hr>
 <footer>Daniel Button &copy; 2018</footer>
