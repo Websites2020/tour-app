@@ -1,12 +1,17 @@
-DROP DATABASE IF EXISTS listingdb;
+DROP DATABASE IF EXISTS listDB;
 
-CREATE DATABASE listingdb;
+CREATE DATABASE listDB;
 
-DROP TABLE IF EXISTS listing_table;
+DROP TABLE IF EXISTS tours;
 
-CREATE TABLE listing_table (
-    column1 datatype,
-    column2 datatype,
-    column3 datatype,
-   ....
+CREATE TABLE tours (
+    id INT(10) AUTO_INCREMENT NOT NULL,
+    city VARCHAR(255) NOT NULL,
+    country VARCHAR(255) NOT NULL,
+    description VARCHAR(1000) NOT NULL,
+    date INT(10) NOT NULL,
+    time INT(10) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    budget INT(10) NOT NULL,
+    PRIMARY KEY (id)
 );
