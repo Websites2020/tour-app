@@ -22,18 +22,18 @@
 <div id="loginForm">
     <h3>Looking to request a tour? Log in as a tourist.</h3>
     <form action="/page1" method="get">
-        Username: <input type="text"><br>
-        Password: <input type="password"><br>
-        <input type="submit" value="Submit">
+        Username: <input type="text" required><br>
+        Password: <input type="password" required><br>
+        <input type="submit">
     </form>
     <h3>or post without an account</h3>
     <button onclick="window.location.href='/page1'">Post</button>
     <br><br><hr><br>
     <h3>Looking to give a tour? Log in as a local.</h3>
     <form action="/page2" method="get">
-        Username: <input type="text"><br>
-        Password: <input type="password"><br>
-        <input type="submit" value="Submit">
+        Username: <input type="text" required><br>
+        Password: <input type="password" required><br>
+        <input type="submit">
     </form>
     <h3>or search without an account</h3>
     <button onclick="window.location.href='/page2'">Search</button>

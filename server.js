@@ -20,6 +20,11 @@ app.get('/page2', function (req, res) {
   app.use(express.static(__dirname + '/public'));
 })
 
+app.get('/page3',function(req,res){
+  res.sendfile("public/page3.html");
+  app.use(express.static(__dirname + '/public'));
+});
+
 app.listen(3000,function(){
   console.log("Started on PORT 3000");
 })

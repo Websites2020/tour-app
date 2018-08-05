@@ -1,6 +1,5 @@
 function store(){
     console.log("this worked");
-    // alert("tour request submitted.")
 
     var a = [document.getElementById("location").value];
     a.push(localStorage.getItem('location'));
@@ -35,8 +34,6 @@ function store(){
    };
 
 function getData(){
-
-    
 
     var storedValueOne = localStorage.getItem("location").split(',');
     var storedValueTwo = localStorage.getItem("description").split(',');
@@ -89,12 +86,12 @@ function send() {
 }
 
 function signup(){
-    window.location.href = "./create.html";
+    window.location.href = "/page3";
 }
 
 function addUser(){
     alert("New User Added");
-    window.location.href = "./index.html";
+    window.location.href = "/";
 }
 
 function googleTranslateElementInit() {
