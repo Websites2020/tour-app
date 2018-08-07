@@ -1,0 +1,19 @@
+DROP DATABASE IF EXISTS toursDB;
+
+CREATE DATABASE toursDB;
+
+USE toursDB;
+
+DROP TABLE IF EXISTS tours;
+
+CREATE TABLE tours (
+    id INT(12) AUTO_INCREMENT NOT NULL,
+    city VARCHAR(255) NOT NULL,
+    country VARCHAR(255) NOT NULL,
+    description VARCHAR(1000) NOT NULL,
+    date VARCHAR(16) NOT NULL,
+    time VARCHAR(5) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    budget VARCHAR(16) NOT NULL,
+    PRIMARY KEY (id)
+);

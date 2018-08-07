@@ -25,20 +25,20 @@
     <!-- <form onsubmit="store()"> -->
     <form action="/insert" method="POST">
         What city would you like your tour to be in?<br>
-        <input id="location" type="text" required><br>
+        <input id="location" type="text" name="city" required><br>
         What state or country is the city in?<br>
-        <input id="state" type="text" required><br>
+        <input id="state" type="text" name="country" required><br>
         What do you want to see/do on your tour?<br>
-        <textarea id="description" class="large-text-box" type="text" cols="40" rows="10" required></textarea><br>
+        <textarea id="description" class="large-text-box" type="text" cols="40" rows="10" name="description" required></textarea><br>
         What is your desired date for this tour?<br>
-        <input id="date" type="date" required><br>
+        <input id="date" type="date" name="date" required><br>
         Desired time?<br>
-        <input id="time" type="time" required><br>
+        <input id="time" type="time" name="time" required><br>
         What is the best contact email?<span class="notice">&nbsp;(!)</span>
         <div class="noticebox">This will be the email locals will contact you at about your tour and will be publicly visible.  If you need to set up a free temporary email address you can do so with Gmail, Yahoo! or Hotmail.</div><br>
-        <input id="email" type="email" required><br>
+        <input id="email" type="email" name="email" required><br>
         How much do you want to spend?<br>
-        <input id="offer" type="number" required><br>
+        <input id="offer" type="number" name="budget" required><br>
         <!-- <button type="button" onclick="store()">Submit</button> -->
         <input type="submit">
     </form>
