@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Tour With A Local</title>
+    <title>Tour With A Local -- Home</title>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> 
 
     <link rel="stylesheet" href="./style.css">
     <script src="./script.js"></script>
@@ -22,33 +24,76 @@
 <div id="loginForm">
     <h3>Looking to request a tour? Log in as a tourist.</h3>
     <form action="/page1" method="get">
-        Username: <input type="text" required><br>
-        Password: <input type="password" required><br>
-        <input type="submit">
+        Username: <input style="font-size: 20px;" type="text" required><br>
+        Password: <input style="font-size: 20px;" type="password" required><br>
+        <input
+        style="background-color: blue;
+        border: none;
+        color: white;
+        padding: 7px 14px;
+        margin: 20px 5px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;" type="submit">
     </form>
     <h3>or post without an account</h3>
-    <button onclick="window.location.href='/page1'">Post</button>
+    <button
+    style="background-color: blue;
+        border: none;
+        color: white;
+        padding: 7px 14px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;" onclick="window.location.href='/page1'">Post</button>
     <br><br><hr><br>
     <h3>Looking to give a tour? Log in as a local.</h3>
     <form action="/page2" method="get">
-        Username: <input type="text" required><br>
-        Password: <input type="password" required><br>
-        <input type="submit">
+        Username: <input style="font-size: 20px;" type="text" required><br>
+        Password: <input style="font-size: 20px;" type="password" required><br>
+        <input 
+        style="background-color: blue;
+        border: none;
+        color: white;
+        padding: 7px 14px;
+        margin: 20px 5px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;" type="submit">
     </form>
     <h3>or search without an account</h3>
-    <button onclick="window.location.href='/page2'">Search</button>
-    <br><br>
+    <button
+    style="background-color: blue;
+        border: none;
+        color: white;
+        padding: 7px 14px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;" onclick="window.location.href='/page2'">Search</button>
+    <br>
     
 </div>
 <div id="how">
     <h3>How Tour With A Local works.</h3>
     <p>
+        Tour With A Local connects tourists with locals. <br><br>
         A tourist (anyone visiting a city or area) posts details about the destination they are visiting, the things they want to do and see when they are there, and how much they want to spend on doing those things.<br><br>
         Locals can then search through postings of tour requests made by tourists and reach out to the poster in helping them meet their travel plans.<br><br>
         Tourists benefit by getting a personallized tour of the city they're visiting at a price that fits their budget.<br><br>
         Locals benefit by making extra income showing people around their city.<br><br>
         Both parties benefit by making a connection to someone they might not have ever met.<br><br>
-        <button onclick="signup()">Sign up</button>
+        <button
+        style="background-color: blue;
+        border: none;
+        color: white;
+        padding: 7px 14px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;" onclick="signup()">Sign up</button>
     </p>
 </div>
 </body>

@@ -1,51 +1,3 @@
-// function store(){
-//     console.log("this worked");
-
-//     var a = [document.getElementById("location").value];
-//     a.push(localStorage.getItem('location'));
-//     localStorage.setItem('location', a);
-
-//     var b = [document.getElementById("description").value];
-//     b.push(localStorage.getItem('description'));
-//     localStorage.setItem('description', b);
-
-//     var c = [document.getElementById("date").value];
-//     c.push(localStorage.getItem('date'));
-//     localStorage.setItem('date', c);
-
-//     var d = [document.getElementById("time").value];
-//     d.push(localStorage.getItem('time'));
-//     localStorage.setItem('time', d);
-
-//     var e = [document.getElementById("email").value];
-//     e.push(localStorage.getItem('email'));
-//     localStorage.setItem('email', e);
-
-//     var f = [document.getElementById("offer").value];
-//     f.push(localStorage.getItem('offer'));
-//     localStorage.setItem('offer', f);
-
-//     var g = [document.getElementById("state").value];
-//     g.push(localStorage.getItem('state'));
-//     localStorage.setItem('state', g);
-
-    
-//     location.reload();
-//    };
-
-// function getData(){
-
-//     var storedValueOne = localStorage.getItem("location").split(',');
-//     var storedValueTwo = localStorage.getItem("description").split(',');
-//     var storedValueThree = localStorage.getItem("date").split(',');
-//     var storedValueFour = localStorage.getItem("time").split(',');
-//     var storedValueSix = localStorage.getItem("offer").split(',');
-//     var storedValueSeven = localStorage.getItem("state").split(',');
-
-//     for (var a in storedValueOne)
-//     {
-
-//     $("ul").append(`<li>City: ${storedValueOne[a]}<br>State/Country: ${storedValueSeven[a]}<br>Description: ${storedValueTwo[a]}<br>Date: ${storedValueThree[a]}<br>Time: ${storedValueFour[a]}<br>Offer: $${storedValueSix[a]}</li>`).append(`<button id='myBtn${[a]}'>Contact</button>`)
 
 var btn = document.getElementById(`myBtn${[a]}`);
 console.log(btn);
@@ -66,10 +18,6 @@ window.onclick = function(event) {
     }
 }
 
-    // }
-
-// }
-
 function getData() {
     $.get("/show", function(data, status){
         // var arr = JSON.parse(data);
@@ -77,7 +25,15 @@ function getData() {
         console.log(data);
         for (var i=0; i<arr.length; i++)
     {
-        $("ul").append(`<li>City: ${arr[i].city}<br>State/Country: ${arr[i].country}<br>Description: ${arr[i].description}<br>Date: ${arr[i].date}<br>Time: ${arr[i].time}<br>Offer: $${arr[i].budget}</li>`).append(`<button id='myBtn${[i]}'>Contact</button>`);
+        $("ul").append(`<li><b>City:</b> ${arr[i].city}<br><b>State/Country:</b> ${arr[i].country}<br><b>Description:</b> ${arr[i].description}<br><b>Date (YYYY/MM/DD):</b> ${arr[i].date}<br><b>Time:</b> ${arr[i].time}<br><b>Offer:</b> $${arr[i].budget}</li>`).append(`<button style="background-color: blue;
+        border: none;
+        color: white;
+        padding: 7px 14px;
+        margin: 10px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;" id='myBtn${[i]}'>Contact</button>`);
         
         var btn = document.getElementById(`myBtn${[i]}`);
         console.log(btn);
@@ -137,3 +93,7 @@ function addUser(){
 function googleTranslateElementInit() {
     new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
   }
+
+function construction() {
+    alert("The sign up page is currently under construction.  In the mean time, please use the account-free versions of the site.")
+}

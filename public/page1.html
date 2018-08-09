@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Tour With A Local -- Tourist</title>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> 
 
     <link rel="stylesheet" href="./style.css">
     <script type="text/javascript" src="./script.js"></script>
@@ -19,28 +21,45 @@
     <h1>Tourist
             <div id="google_translate_element"></div>
     </h1>
-    <button id="logout" onclick="window.location.href='/'">Home</button>
+    <button
+    style="background-color: blue;
+        border: none;
+        color: white;
+        padding: 7px 14px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;" id="logout" onclick="window.location.href='/'">Home</button>
     </header>
     <br>
     <!-- <form onsubmit="store()"> -->
     <form action="/insert" method="POST">
         What city would you like your tour to be in?<br>
-        <input id="location" type="text" name="city" required><br>
+        <input style="font-size: 20px;" id="location" type="text" name="city" required><br>
         What state or country is the city in?<br>
-        <input id="state" type="text" name="country" required><br>
+        <input style="font-size: 20px;" id="state" type="text" name="country" required><br>
         What do you want to see/do on your tour?<br>
-        <textarea id="description" class="large-text-box" type="text" cols="40" rows="10" name="description" required></textarea><br>
+        <textarea style="font-size: 20px;" id="description" class="large-text-box" type="text" cols="40" rows="10" name="description" required></textarea><br>
         What is your desired date for this tour?<br>
-        <input id="date" type="date" name="date" required><br>
-        Desired time?<br>
-        <input id="time" type="time" name="time" required><br>
-        What is the best contact email?<span class="notice">&nbsp;(!)</span>
-        <div class="noticebox">This will be the email locals will contact you at about your tour and will be publicly visible.  If you need to set up a free temporary email address you can do so with Gmail, Yahoo! or Hotmail.</div><br>
-        <input id="email" type="email" name="email" required><br>
+        <input style="font-size: 20px;" id="date" type="date" name="date" required><br>
+        Desired time? (hh:mm am/pm)<br>
+        <input style="font-size: 20px;" id="time" type="time" name="time" required><br>
+        What is the best contact email?<span class="notice">&nbsp;( ! )</span>
+        <div style="font-size: 20px;" class="noticebox">This will be the email locals will contact you at about your tour and will be publicly visible.  If you need to set up a free temporary email address you can do so with Gmail, Yahoo! or Hotmail.</div><br>
+        <input style="font-size: 20px;" id="email" type="email" name="email" required><br>
         How much do you want to spend?<br>
-        <input id="offer" type="number" name="budget" required><br>
+        <input style="font-size: 20px;" id="offer" type="number" name="budget" required><br>
         <!-- <button type="button" onclick="store()">Submit</button> -->
-        <input type="submit">
+        <input
+        style="background-color: blue;
+        border: none;
+        color: white;
+        padding: 7px 14px;
+        margin: 20px 5px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;" type="submit">
     </form>
     <script>
     

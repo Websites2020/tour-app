@@ -4,33 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Tour With A Local -- Sign Up</title>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> 
+
     <link rel="stylesheet" href="./style.css">
     <script src="./script.js"></script>
 
 </head>
-<body>
+<body onload="construction()">
         <header>
                 <h1>Sign Up
                         <div id="google_translate_element"></div>
                 </h1>
                 </header>
-    <form>
+    <form onsubmit="addUser()">
         User Name:<br>
-        <input type="text"><br>
+        <input style="font-size: 20px;" type="text" required><br>
         Email:<br>
-        <input type="email"><br>
+        <input style="font-size: 20px;" type="email" required><br>
         Password:<br>
-        <input type="password"><br>
-        <button type="button" onclick="addUser()">Submit</button>
+        <input style="font-size: 20px;" type="password" required><br>
+        Account Type:<br>
+        <input style="font-size: 20px;" type="radio" name="account" value="tourist" checked> Tourist&nbsp;&nbsp;&nbsp;
+        <input style="font-size: 20px;" type="radio" name="account" value="local"> Local<br><br>
+        <input
+        style="background-color: blue;
+        border: none;
+        color: white;
+        padding: 7px 14px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;" type="submit">
     </form>
     <br>
-    <button onclick="window.location.href='/'">Go Back</button>
+    <button
+    style="background-color: blue;
+        border: none;
+        color: white;
+        padding: 7px 14px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;" onclick="window.location.href='/'">Go Back</button>
 </body>
 <br><hr>
 <footer>Daniel Button &copy; 2018</footer>

@@ -64,7 +64,7 @@ app.post('/insert', function(req, res) {
 app.get('/show',function(req,res){
   // con.connect(function(err) {
     if (err) throw err;
-    con.query("SELECT * FROM tours", function (err, result, fields) {
+    con.query("SELECT * FROM tours ORDER BY id DESC", function (err, result, fields) {
       if (err) throw err;
       console.log(result);
       res.json(result);

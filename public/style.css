@@ -1,3 +1,10 @@
+body {
+    background-color: #458f39;
+background-image: url(https://www.transparenttextures.com/patterns/crossword.png);
+    color: black;
+    font-family: 'Open Sans', sans-serif;
+}
+
 #google_translate_element {
     float: right;
     margin: 0 30px 0 0;
@@ -10,7 +17,10 @@
 #how {
     float: left;
     width: 700px;
-    padding: 0 50px 60px 60px;
+    padding: 0 30px 0 30px;
+    margin: 20px;
+    background: white;
+    border-radius: 25px;
 }
 
 .footer {
@@ -28,6 +38,14 @@ button {
 .large-text-box {
     width: 300px;
     height: 200px;
+}
+
+#results {
+    background: white;
+    border-radius: 25px;
+    margin: 20px 20px;
+    padding: 30px 50px;
+    list-style-type: square;
 }
 
 /* The Modal (background) */
@@ -70,15 +88,15 @@ button {
 }
 
 .noticebox {
-    background-color: blue;
+    background-color: lightblue;
     width: 400px;
     padding: 10px;
     display: none;
-    color: white;
+    color: black;
 }
 
 .notice {
-    color: blue;
+    color: white;
     font-weight: bold;
 }
 .notice:hover + div {
