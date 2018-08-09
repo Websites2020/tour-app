@@ -47,11 +47,12 @@ app.post('/insert', function(req, res) {
     var city = req.body.city;
     var country = req.body.country;
     var description = req.body.description;
+    var people = req.body.people;
     var date = req.body.date;
     var time = req.body.time;
     var email = req.body.email;
     var budget = req.body.budget;
-    var sql = `INSERT INTO tours (city, country, description, date, time, email, budget) VALUES ('${city}', '${country}', '${description}', '${date}', '${time}', '${email}', '${budget}')`;
+    var sql = `INSERT INTO tours (city, country, description, people, date, time, email, budget) VALUES ('${city}', '${country}', '${description}', '${people}', '${date}', '${time}', '${email}', '${budget}')`;
     con.query(sql, function (err, result) {
       if (err) throw err;
       console.log("1 record inserted");

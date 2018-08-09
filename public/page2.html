@@ -29,7 +29,7 @@
         text-align: center;
         text-decoration: none;
         display: inline-block;
-        font-size: 16px;" onclick="window.location.href='/'">Home</button>
+        font-size: 20px;" onclick="window.location.href='/'">Home</button>
     </header>
     <h2>Tours to bid on</h2>
     <h4>Press <code>ctrl-f</code> (PC) or <code>cmd-f</code> (Mac) to search results.</h4>
@@ -43,11 +43,11 @@
     <!-- Modal content -->
     <div class="modal-content">
       <span class="close">&times;</span>
-      <h3>Contact the poster</h3>
-      <form id="email" method="post" enctype="text/plain">
-      Your Message to the poster:<br>
-      <textarea id="sendM" cols="100" rows="10"></textarea><br>
-      <button
+      <h2>Contact the poster</h2>
+      <form style="font-size: 20px;" onsubmit="send()" id="email" method="post" enctype="text/plain">
+      Your message to the poster:<br>
+      <textarea style="font-size: 20px;" id="sendM" cols="60" rows="10" maxlength="799" required></textarea><br>
+      <input
       style="background-color: blue;
         border: none;
         color: white;
@@ -55,7 +55,7 @@
         text-align: center;
         text-decoration: none;
         display: inline-block;
-        font-size: 16px;" type="button" onclick="send()">Submit</button>
+        font-size: 20px;" type="submit" value="Send">
       </form>
     </div>
   

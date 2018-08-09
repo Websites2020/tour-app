@@ -29,26 +29,29 @@
         text-align: center;
         text-decoration: none;
         display: inline-block;
-        font-size: 16px;" id="logout" onclick="window.location.href='/'">Home</button>
+        font-size: 20px;" id="logout" onclick="window.location.href='/'">Home</button>
     </header>
     <br>
     <!-- <form onsubmit="store()"> -->
-    <form action="/insert" method="POST">
+    <form style="font-size: 20px;" action="/insert" method="POST">
         What city would you like your tour to be in?<br>
-        <input style="font-size: 20px;" id="location" type="text" name="city" required><br>
+        <input style="font-size: 20px;" id="location" type="text" name="city" maxlength="99" required><br>
         What state or country is the city in?<br>
-        <input style="font-size: 20px;" id="state" type="text" name="country" required><br>
+        <input style="font-size: 20px;" id="state" type="text" name="country" maxlength="99" required><br>
         What do you want to see/do on your tour?<br>
-        <textarea style="font-size: 20px;" id="description" class="large-text-box" type="text" cols="40" rows="10" name="description" required></textarea><br>
+        <textarea style="font-size: 20px;" id="description" class="large-text-box" type="text" cols="40" rows="10" name="description" maxlength="499" required></textarea><br>
+        How many people are going to be on this tour?<br>
+        <input style="font-size: 20px;" id="people" type="number" name="people" min="1" max="999" required><br>
         What is your desired date for this tour?<br>
         <input style="font-size: 20px;" id="date" type="date" name="date" required><br>
         Desired time? (hh:mm am/pm)<br>
         <input style="font-size: 20px;" id="time" type="time" name="time" required><br>
         What is the best contact email?<span class="notice">&nbsp;( ! )</span>
         <div style="font-size: 20px;" class="noticebox">This will be the email locals will contact you at about your tour and will be publicly visible.  If you need to set up a free temporary email address you can do so with Gmail, Yahoo! or Hotmail.</div><br>
-        <input style="font-size: 20px;" id="email" type="email" name="email" required><br>
-        How much do you want to spend?<br>
-        <input style="font-size: 20px;" id="offer" type="number" name="budget" required><br>
+        <input style="font-size: 20px;" id="email" type="email" name="email" maxlength="99" required><br>
+        How much do you want to spend?<span class="notice">&nbsp;( ! )</span>
+        <div style="font-size: 20px;" class="noticebox">This is the amount you are offering to pay your tour guide and does not include extras like tickets, food, or entrance fees.</div><br>
+        <input style="font-size: 20px;" id="offer" type="number" name="budget" min="1" max="99999" required><br>
         <!-- <button type="button" onclick="store()">Submit</button> -->
         <input
         style="background-color: blue;
@@ -59,7 +62,7 @@
         text-align: center;
         text-decoration: none;
         display: inline-block;
-        font-size: 16px;" type="submit">
+        font-size: 20px;" type="submit">
     </form>
     <script>
     

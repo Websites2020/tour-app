@@ -7,13 +7,14 @@ USE toursDB;
 DROP TABLE IF EXISTS tours;
 
 CREATE TABLE tours (
-    id INT(12) AUTO_INCREMENT NOT NULL,
-    city VARCHAR(255) NOT NULL,
-    country VARCHAR(255) NOT NULL,
-    description VARCHAR(1000) NOT NULL,
+    id INT(16) AUTO_INCREMENT NOT NULL,
+    city VARCHAR(100) NOT NULL,
+    country VARCHAR(100) NOT NULL,
+    description VARCHAR(500) NOT NULL,
+    people VARCHAR(10) NOT NULL,
     date VARCHAR(16) NOT NULL,
-    time VARCHAR(5) NOT NULL,
-    email VARCHAR(255) NOT NULL,
-    budget VARCHAR(16) NOT NULL,
+    time VARCHAR(6) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    budget VARCHAR(10) NOT NULL,
     PRIMARY KEY (id)
 );

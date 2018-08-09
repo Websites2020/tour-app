@@ -25,7 +25,7 @@ function getData() {
         console.log(data);
         for (var i=0; i<arr.length; i++)
     {
-        $("ul").append(`<li><b>City:</b> ${arr[i].city}<br><b>State/Country:</b> ${arr[i].country}<br><b>Description:</b> ${arr[i].description}<br><b>Date (YYYY/MM/DD):</b> ${arr[i].date}<br><b>Time:</b> ${arr[i].time}<br><b>Offer:</b> $${arr[i].budget}</li>`).append(`<button style="background-color: blue;
+        $("ul").append(`<li style="font-size: 20px;"><b>City:</b> ${arr[i].city}<br><b>State/Country:</b> ${arr[i].country}<br><b>Description:</b> ${arr[i].description}<br><b>Number of People:</b> ${arr[i].people}<br><b>Date (YYYY/MM/DD):</b> ${arr[i].date}<br><b>Time:</b> ${arr[i].time}<br><b>Offer:</b> $${arr[i].budget}</li>`).append(`<button style="background-color: blue;
         border: none;
         color: white;
         padding: 7px 14px;
@@ -33,7 +33,7 @@ function getData() {
         text-align: center;
         text-decoration: none;
         display: inline-block;
-        font-size: 16px;" id='myBtn${[i]}'>Contact</button>`);
+        font-size: 20px;" id='myBtn${[i]}'>Contact</button>`);
         
         var btn = document.getElementById(`myBtn${[i]}`);
         console.log(btn);

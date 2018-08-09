@@ -7,7 +7,7 @@ background-image: url(https://www.transparenttextures.com/patterns/crossword.png
 
 #google_translate_element {
     float: right;
-    margin: 0 30px 0 0;
+    margin: 0 50px 0 0;
 }
 
 #loginForm {
@@ -16,9 +16,10 @@ background-image: url(https://www.transparenttextures.com/patterns/crossword.png
 
 #how {
     float: left;
-    width: 700px;
+    width: 600px;
+    font-size: 20px;
     padding: 0 30px 0 30px;
-    margin: 20px;
+    margin: 20px 0 0 40px;
     background: white;
     border-radius: 25px;
 }
