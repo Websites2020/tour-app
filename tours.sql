@@ -4,10 +4,34 @@ CREATE DATABASE toursDB;
 
 USE toursDB;
 
+DROP TABLE IF EXISTS tourists;
+
+CREATE TABLE tourists (
+    userID INT(16) AUTO_INCREMENT NOT NULL,
+    username VARCHAR(26) NOT NULL UNIQUE,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    password VARCHAR(16) NOT NULL,
+    rating VARCHAR(5),
+    review VARCHAR(500),
+    PRIMARY KEY (userID)
+);
+
+DROP TABLE IF EXISTS locals;
+
+CREATE TABLE locals (
+    userID INT(16) AUTO_INCREMENT NOT NULL,
+    username VARCHAR(26) NOT NULL UNIQUE,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    password VARCHAR(16) NOT NULL,
+    rating VARCHAR(5),
+    review VARCHAR(500),
+    PRIMARY KEY (userID)
+);
+
 DROP TABLE IF EXISTS tours;
 
 CREATE TABLE tours (
-    id INT(16) AUTO_INCREMENT NOT NULL,
+    tourID INT(16) AUTO_INCREMENT NOT NULL,
     city VARCHAR(100) NOT NULL,
     country VARCHAR(100) NOT NULL,
     description VARCHAR(500) NOT NULL,
@@ -16,5 +40,7 @@ CREATE TABLE tours (
     time VARCHAR(6) NOT NULL,
     email VARCHAR(100) NOT NULL,
     budget VARCHAR(10) NOT NULL,
-    PRIMARY KEY (id)
+    userID INT(16),
+    PRIMARY KEY (tourID),
+    FOREIGN KEY (userID) REFERENCES tourists(userID)
 );

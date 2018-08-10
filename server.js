@@ -41,7 +41,6 @@ app.get('/page3', function(req,res) {
 con.connect(function(err) {
 
 app.post('/insert', function(req, res) {
-  // con.connect(function(err) {
     if (err) throw err;
     console.log("Connected!");
     var city = req.body.city;
@@ -57,23 +56,50 @@ app.post('/insert', function(req, res) {
       if (err) throw err;
       console.log("1 record inserted");
     });
-  // });
   res.sendfile("public/page1.html");
   app.use(express.static(__dirname + '/public'));
 })
 
 app.get('/show',function(req,res){
-  // con.connect(function(err) {
     if (err) throw err;
-    con.query("SELECT * FROM tours ORDER BY id DESC", function (err, result, fields) {
+    con.query("SELECT * FROM tours ORDER BY tourID DESC", function (err, result, fields) {
       if (err) throw err;
       console.log(result);
       res.json(result);
     });
-  // });
 });
 
-});
+app.post('/addTourist', function(req,res) {
+  if (err) throw err;
+  console.log(req.body);
+    var usrName = req.body.usrName;
+    var usrEmail = req.body.usrEmail;
+    var usrPass = req.body.usrPass;
+    var sql2 = `INSERT INTO tourists (username, email, password) VALUES ('${usrName}', '${usrEmail}', '${usrPass}')`;
+    con.query(sql2, function (err, result) {
+      if (err) throw err;
+      console.log("1 record inserted")
+    });
+    res.sendfile("public/index.html");
+    app.use(express.static(__dirname + '/public'));
+})
+
+app.post('/addLocal', function(req,res) {
+  if (err) throw err;
+  console.log(req.body);
+    var usrName = req.body.usrName;
+    var usrEmail = req.body.usrEmail;
+    var usrPass = req.body.usrPass;
+    var sql3 = `INSERT INTO locals (username, email, password) VALUES ('${usrName}', '${usrEmail}', '${usrPass}')`;
+    con.query(sql3, function (err, result) {
+      if (err) throw err;
+      console.log("1 record inserted")
+    });
+    res.sendfile("public/index.html");
+    app.use(express.static(__dirname + '/public'));
+})
+
+}); //end con.connect
 
 app.listen(3000,function(){
   console.log("Started on PORT 3000");

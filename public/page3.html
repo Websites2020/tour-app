@@ -14,24 +14,25 @@
 
     <link rel="stylesheet" href="./style.css">
     <script src="./script.js"></script>
+    <script src="./login.js"></script>
 
 </head>
-<body onload="construction()">
+<body>
         <header>
                 <h1>Sign Up
                         <div id="google_translate_element"></div>
                 </h1>
                 </header>
-    <form style="font-size: 20px;" onsubmit="addUser()">
+    <form id="signupForm" style="font-size: 20px;" onsubmit="addUser()" action="/">
         User Name:<br>
-        <input style="font-size: 20px;" type="text" maxlength="254" required><br>
+        <input id="usrName" style="font-size: 20px;" type="text" name="usrName" maxlength="254" required><br>
         Email:<br>
-        <input style="font-size: 20px;" type="email" maxlength="254" required><br>
+        <input id="usrEmail" style="font-size: 20px;" type="email" name="usrEmail" maxlength="254" required><br>
         Password:<br>
-        <input style="font-size: 20px;" type="password" maxlength="254" required><br>
+        <input id="usrPass" style="font-size: 20px;" type="password" name="usrPass" maxlength="254" required><br>
         Account Type:<br>
-        <input style="font-size: 20px;" type="radio" name="account" value="tourist" checked> Tourist&nbsp;&nbsp;&nbsp;
-        <input style="font-size: 20px;" type="radio" name="account" value="local"> Local<br><br>
+        <input style="font-size: 20px;" type="radio" name="account" value="1" checked> Tourist&nbsp;&nbsp;&nbsp;
+        <input style="font-size: 20px;" type="radio" name="account" value="2"> Local<br><br>
         <input
         style="background-color: blue;
         border: none;

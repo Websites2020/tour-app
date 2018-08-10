@@ -16,10 +16,10 @@ background-image: url(https://www.transparenttextures.com/patterns/crossword.png
 
 #how {
     float: left;
-    width: 600px;
+    width: 540px;
     font-size: 20px;
     padding: 0 30px 0 30px;
-    margin: 20px 0 0 40px;
+    margin: 20px 0 0 80px;
     background: white;
     border-radius: 25px;
 }

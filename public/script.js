@@ -1,22 +1,22 @@
 
-var btn = document.getElementById(`myBtn${[a]}`);
-console.log(btn);
-var span = document.getElementsByClassName("close")[0];
-var modal = document.getElementById('myModal');
+// var btn = document.getElementById(`myBtn${[a]}`);
+// console.log(btn);
+// var span = document.getElementsByClassName("close")[0];
+// var modal = document.getElementById('myModal');
 
-btn.onclick = function() {
-    modal.style.display = "block";
-}
+// btn.onclick = function() {
+//     modal.style.display = "block";
+// }
 
-span.onclick = function() {
-    modal.style.display = "none";
-}
+// span.onclick = function() {
+//     modal.style.display = "none";
+// }
 
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
+// window.onclick = function(event) {
+//     if (event.target == modal) {
+//         modal.style.display = "none";
+//     }
+// }
 
 function getData() {
     $.get("/show", function(data, status){
@@ -83,11 +83,6 @@ function send() {
 
 function signup(){
     window.location.href = "/page3";
-}
-
-function addUser(){
-    alert("New User Added");
-    window.location.href = "/";
 }
 
 function googleTranslateElementInit() {
