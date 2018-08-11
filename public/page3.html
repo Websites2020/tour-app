@@ -30,13 +30,13 @@
                 <div class="col-md-12">
                     <header>
                         <nav class="navbar">
-                            <span>Tour With a Local</span>
+                            <span class="title">Tour With a Local</span>
                                 <ul class="nav justify-content-end">
                                     <li class="nav-item">
                                         <a class="nav-link" href="/">Home</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link active" href="page4">How it works</a>
+                                        <a class="nav-link active" href="page4">How it Works</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="/page3">Sign Up</a>
@@ -50,42 +50,35 @@
                                                 <a class="dropdown-item" href="/page6">Local</a>
                                             </div>
                                     </li>
-                                    <div id="google_translate_element"></div>
+                                    <!-- <div id="google_translate_element"></div> -->
                                 </ul>
                         </nav>
                     </header>
                 </div>
             </div>
-    <form id="signupForm" style="font-size: 20px;" onsubmit="addUser()" action="/">
+            <br>
+    <div class="container">
+        <div class="row">
+                <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <h3 class="loginTitle">Create an Account</h3>
+                <br>
+    <form id="signupForm" style="font-size: 18px;" onsubmit="addUser()" action="/">
         User Name:<br>
-        <input id="usrName" style="font-size: 20px;" type="text" name="usrName" maxlength="254" required><br>
+        <input id="usrName" style="font-size: 18px; width: 100%;" type="text" name="usrName" maxlength="254" required><br>
         Email:<br>
-        <input id="usrEmail" style="font-size: 20px;" type="email" name="usrEmail" maxlength="254" required><br>
+        <input id="usrEmail" style="font-size: 18px; width: 100%;" type="email" name="usrEmail" maxlength="254" required><br>
         Password:<br>
-        <input id="usrPass" style="font-size: 20px;" type="password" name="usrPass" maxlength="254" required><br>
+        <input id="usrPass" style="font-size: 18px; width: 100%;" type="password" name="usrPass" maxlength="254" required><br>
         Account Type:<br>
-        <input style="font-size: 20px;" type="radio" name="account" value="1" checked> Tourist&nbsp;&nbsp;&nbsp;
-        <input style="font-size: 20px;" type="radio" name="account" value="2"> Local<br><br>
-        <input
-        style="background-color: blue;
-        border: none;
-        color: white;
-        padding: 7px 14px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 20px;" type="submit">
+        <input style="font-size: 18px;" type="radio" name="account" value="1" checked> Tourist&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input style="font-size: 18px;" type="radio" name="account" value="2"> Local<br><br>
+        <div class="loginButton"><input class="btn btn-primary" type="submit"></div>
     </form>
-    <br>
-    <button
-    style="background-color: blue;
-        border: none;
-        color: white;
-        padding: 7px 14px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 20px;" onclick="window.location.href='/'">Home</button>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+    </div>
 </body>
 <br><hr>
 <footer>Daniel Button &copy; 2018</footer>

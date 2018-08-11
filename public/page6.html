@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Tour With a Local -- How it works</title>
+    <title>Tour With a Local -- Local Log In</title>
 
     
 
@@ -29,13 +29,13 @@
             <div class="col-md-12">
                 <header>
                     <nav class="navbar">
-                    <span>Tour With a Local</span>
+                    <span class="title">Tour With a Local</span>
                         <ul class="nav justify-content-end">
                             <li class="nav-item">
                                 <a class="nav-link" href="/">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active" href="page4">How it works</a>
+                                <a class="nav-link active" href="page4">How it Works</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="/page3">Sign Up</a>
@@ -49,31 +49,25 @@
                                         <a class="dropdown-item" href="/page6">Local</a>
                                     </div>
                             </li>
-                            <div id="google_translate_element"></div>
+                            <!-- <div id="google_translate_element"></div> -->
                         </ul>
                     </nav>
                 </header>
             </div>
         </div>
+        <br>
         <div class="container">
         <div class="row">
-            <div class="col-md-12">
-                <h3>Looking to give a tour? Log in as a local.</h3>
-                <form action="/page2" method="get">
-                    Username: <input style="font-size: 20px;" type="text" required><br>
-                    Password: <input style="font-size: 20px;" type="password" required><br>
-                    <input 
-                    style="background-color: blue;
-                    border: none;
-                    color: white;
-                    padding: 7px 14px;
-                    margin: 20px 5px;
-                    text-align: center;
-                    text-decoration: none;
-                    display: inline-block;
-                    font-size: 20px;" type="submit">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <h3 class="loginTitle">Log in as a Local.</h3>
+                <form style="font-size: 18px;" action="/page2" method="get">
+                    Username:<br><input style="font-size: 18px; width: 100%;" type="text" required><br>
+                    Password:<br><input style="font-size: 18px; width: 100%;" type="password" required><br>
+                    <div class="loginButton"><input class="btn btn-primary" type="submit"></div>
                 </form>
             </div>
+            <div class="col-md-4"></div>
         </div>
     </div>
 </body>
