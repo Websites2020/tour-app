@@ -38,6 +38,21 @@ app.get('/page3', function(req,res) {
   app.use(express.static(__dirname + '/public'));
 });
 
+app.get('/page4', function(req,res) {
+  res.sendfile("public/page4.html");
+  app.use(express.static(__dirname + '/public'));
+});
+
+app.get('/page5', function(req,res) {
+  res.sendfile("public/page5.html");
+  app.use(express.static(__dirname + '/public'));
+});
+
+app.get('/page6', function(req,res) {
+  res.sendfile("public/page6.html");
+  app.use(express.static(__dirname + '/public'));
+});
+
 con.connect(function(err) {
 
 app.post('/insert', function(req, res) {
