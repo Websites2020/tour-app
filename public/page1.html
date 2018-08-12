@@ -29,13 +29,13 @@
                 <div class="col-md-12">
                     <header>
                     <nav class="navbar">
-                        <span class="title">Tour With a Local</span>
+                        <span class="title"><img src="./images/logo.png" height="70px" alt="logo">&trade;</span>
                             <ul class="nav justify-content-end">
                                 <li class="nav-item">
                                     <a class="nav-link" href="/">Home</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link active" href="page4">How it Works</a>
+                                    <a class="nav-link" href="page4">How it Works</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="/page3">Sign Up</a>
@@ -46,7 +46,7 @@
                                     </a>
                                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                             <a class="dropdown-item" href="/page5">Tourist</a>
-                                            <a class="dropdown-item" href="/page6">Local</a>
+                                            <a class="dropdown-item" href="/page6">Local Guide</a>
                                         </div>
                                 </li>
                                 <!-- <div id="google_translate_element"></div> -->
@@ -58,8 +58,8 @@
             <br>
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
-                <h3>Create a tour request</h3>
+            <div class="col-md-5">
+                <h3>Tourists: Create a Tour Request</h3>
     <!-- <form onsubmit="store()"> -->
     <form style="font-size: 18px;" onsubmit="tourReq()" action="/insert" method="POST">
         In what city would you like your tour to be in?<br>
@@ -67,7 +67,7 @@
         What state or country is the city in?<br>
         <input style="font-size: 18px;" id="state" type="text" name="country" maxlength="99" required><br>
         What do you want to see/do on your tour?<br>
-        <textarea style="font-size: 18px;" id="description" class="large-text-box" type="text" cols="60" rows="10" name="description" maxlength="499" placeholder="Ex: Vist museums, each lunch at a local cafe, see street art." required></textarea><br>
+        <textarea style="font-size: 18px;" id="description" class="large-text-box" type="text" cols="32" rows="10" name="description" maxlength="499" placeholder="Ex: Vist museums, eat lunch at a local cafe, see street art." required></textarea><br>
         How many people are going to be on this tour?<br>
         <input style="font-size: 18px;" id="people" type="number" name="people" min="1" max="999" required><br>
         What is your desired date for this tour?<br>
@@ -78,11 +78,14 @@
         <div style="font-size: 18px;" class="noticebox">This will be the email locals will contact you at about your tour and will be publicly visible.  If you need to set up a free temporary email address you can do so with Gmail, Yahoo! or Hotmail.</div><br>
         <input style="font-size: 18px;" id="email" type="email" name="email" maxlength="99" required><br>
         How much do you want to offer your tour guide?<span class="notice">&nbsp;( ! )</span>
-        <div style="font-size: 18px;" class="noticebox">This is the amount you are offering to pay your tour guide and does not include extras like tickets, food, or entrance fees.</div><br>
+        <div style="font-size: 18px;" class="noticebox">This is the amount you are offering to pay your tour guide in local currency and does not include extras like tickets, food, or entrance fees.</div><br>
         <input style="font-size: 18px;" id="offer" type="number" name="budget" min="1" max="99999" required><br>
         <!-- <button type="button" onclick="store()">Submit</button> -->
         <input class="btn btn-primary" type="submit">
     </form>
+            </div>
+            <div class="col-md-7">
+                <!-- <img class="rounded" src="./images/tourist1.jpg" alt="Tourist"> -->
             </div>
         </div>
     </div>

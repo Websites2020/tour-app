@@ -2,6 +2,10 @@ body {
     background: white;
 }
 
+.navbar {
+    font-size: 20px;
+}
+
 .title {
     font-size: 40px;
 }
@@ -29,7 +33,9 @@ body {
 }
 
 .footer {
-    clear: both;
+    position: absolute;
+    bottom: 0%;
+    width: 100%;
 }
 
 input {

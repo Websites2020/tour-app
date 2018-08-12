@@ -17,7 +17,7 @@ function getData() {
         for (var i=0; i<arr.length; i++)
     {
        $("#listings").append(`
-        <div class="card">
+        <div class="card border-info">
         <h5 class="card-header"><b>State/Country:</b> ${arr[i].country}</h5>
         <div class="card-body">
         <h5 class="card-title"><b>City:</b> ${arr[i].city}</h5>
