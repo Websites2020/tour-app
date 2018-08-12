@@ -1,9 +1,10 @@
 body {
-    background: white;
+    /* background: orange; */
 }
 
 .navbar {
     font-size: 20px;
+    background: white;
 }
 
 .title {
@@ -20,7 +21,7 @@ body {
 }
 
 #buttonGroup {
-    top: 30%;
+    top: 20%;
     bottom: auto;
 }
 
@@ -30,6 +31,10 @@ body {
 
 .loginButton {
     text-align: center;
+}
+
+footer {
+    background: white;
 }
 
 .footer {
@@ -104,4 +109,10 @@ button {
 }
 .notice:hover + div {
     display: block;
+}
+
+@media screen and (max-width: 1100px) {
+    #touristImg {
+        visibility: hidden;
+    }
 }
