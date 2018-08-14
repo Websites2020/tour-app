@@ -1,10 +1,13 @@
 body {
     /* background: orange; */
+    background-color: #ffffff;
+    background-image: url("https://www.transparenttextures.com/patterns/diagmonds-light.png");
 }
 
 .navbar {
     font-size: 20px;
     background: white;
+    background-image: url("https://www.transparenttextures.com/patterns/diagmonds-light.png");
 }
 
 .title {
@@ -35,6 +38,7 @@ body {
 
 footer {
     background: white;
+    background-image: url("https://www.transparenttextures.com/patterns/diagmonds-light.png");
 }
 
 .footer {

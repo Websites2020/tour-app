@@ -53,6 +53,16 @@ app.get('/page6', function(req,res) {
   app.use(express.static(__dirname + '/public'));
 });
 
+app.get('/page7', function(req,res) {
+  res.sendfile("public/page7.html");
+  app.use(express.static(__dirname + '/public'));
+});
+
+app.get('/page8', function(req,res) {
+  res.sendfile("public/page8.html");
+  app.use(express.static(__dirname + '/public'));
+});
+
 con.connect(function(err) {
 
 app.post('/insert', function(req, res) {
@@ -90,13 +100,14 @@ app.post('/addTourist', function(req,res) {
     var usrName = req.body.usrName;
     var usrEmail = req.body.usrEmail;
     var usrPass = req.body.usrPass;
-    var sql2 = `INSERT INTO tourists (username, email, password) VALUES ('${usrName}', '${usrEmail}', '${usrPass}')`;
+    var sql2 = `INSERT IGNORE INTO tourists (username, email, password) VALUES ('${usrName}', '${usrEmail}', '${usrPass}')`;
     con.query(sql2, function (err, result) {
-      if (err) throw err;
-      console.log("1 record inserted")
+      // if (err) throw err;
+      console.log(result)
+      res.json(result)
     });
-    res.sendfile("public/index.html");
-    app.use(express.static(__dirname + '/public'));
+    // res.sendfile("public/index.html");
+    // app.use(express.static(__dirname + '/public'));
 })
 
 app.post('/addLocal', function(req,res) {
@@ -105,13 +116,14 @@ app.post('/addLocal', function(req,res) {
     var usrName = req.body.usrName;
     var usrEmail = req.body.usrEmail;
     var usrPass = req.body.usrPass;
-    var sql3 = `INSERT INTO locals (username, email, password) VALUES ('${usrName}', '${usrEmail}', '${usrPass}')`;
+    var sql3 = `INSERT IGNORE INTO locals (username, email, password) VALUES ('${usrName}', '${usrEmail}', '${usrPass}')`;
     con.query(sql3, function (err, result) {
-      if (err) throw err;
-      console.log("1 record inserted")
+      // if (err) throw err;
+      console.log(result)
+      res.json(result)
     });
-    res.sendfile("public/index.html");
-    app.use(express.static(__dirname + '/public'));
+    // res.sendfile("public/index.html");
+    // app.use(express.static(__dirname + '/public'));
 })
 
 }); //end con.connect
