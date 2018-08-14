@@ -41,11 +41,11 @@ footer {
     background-image: url("https://www.transparenttextures.com/patterns/diagmonds-light.png");
 }
 
-.footer {
+/* .footer {
     position: absolute;
     bottom: 0%;
     width: 100%;
-}
+} */
 
 input {
     margin: 5px;

@@ -22,6 +22,7 @@
 
     <link rel="stylesheet" href="./style.css">
     <script src="./script.js"></script>
+    <script src="./login.js"></script>
 
 </head>
 <body>
@@ -62,11 +63,11 @@
             <div class="col-md-4">
                 <h3 class="loginTitle">Log in as a Tourist.</h3>
                 <br>
-                <form style="font-size: 18px;" action="/page1" method="get">
+                <form style="font-size: 18px;" onsubmit="touristLog()" action="/page9" method="get">
                     Username:<br>
-                    <input style="font-size: 18px; width: 100%;" type="text" required><br>
+                    <input id="tUsrName" style="font-size: 18px; width: 100%;" type="text" required><br>
                     Password:<br>
-                    <input style="font-size: 18px; width: 100%;" type="password" required><br><br>
+                    <input id="tUsrPass" style="font-size: 18px; width: 100%;" type="password" required><br><br>
                     <div class="loginButton"><input class="btn btn-primary" style="width: 100%" type="submit"></div>
                 </form>
             </div>

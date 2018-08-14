@@ -16,7 +16,7 @@ if (usrData === "1") {
           }
         });
 } else if (usrData === "2") {
-    var user=$("#usrName").val();
+        var user=$("#usrName").val();
         var email=$("#usrEmail").val();
         var pass=$("#usrPass").val();
         $.post("/addLocal",{usrName: user,usrEmail: email, usrPass: pass}, function(data){
@@ -29,5 +29,20 @@ if (usrData === "1") {
         });
 }
 alert("processing...")
+}
 
+
+function touristLog() {
+  var user=$("#tUsrName").val();
+  var pass=$("#tUsrPass").val();
+  $.post("/tLogin", {usrName: user, usrPass: pass}, function(data){
+    console.log(user);
+    console.log(pass);
+    // var arr = JSON.parse(data);
+    var arr = data
+    for (i = 0; i < arr.length; i++) {
+    console.log(arr[i].username);
+    console.log(arr[i].password);
+    }
+  })
 }

@@ -63,6 +63,11 @@ app.get('/page8', function(req,res) {
   app.use(express.static(__dirname + '/public'));
 });
 
+app.get('/page9', function(req,res) {
+  res.sendfile("public/page9.html");
+  app.use(express.static(__dirname + '/public'));
+});
+
 con.connect(function(err) {
 
 app.post('/insert', function(req, res) {
@@ -124,6 +129,18 @@ app.post('/addLocal', function(req,res) {
     });
     // res.sendfile("public/index.html");
     // app.use(express.static(__dirname + '/public'));
+})
+
+app.post('/tLogin', function(req, res) {
+  if (err) throw err;
+  console.log(req.body);
+    var adr = req.body.usrName
+    var sql = `SELECT * FROM tourists WHERE username = ?`;
+    con.query(sql, [adr], function (err, result) {
+    if (err) throw err;
+      console.log(result);
+      res.json(result);
+  });
 })
 
 }); //end con.connect
