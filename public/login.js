@@ -35,7 +35,7 @@ alert("processing...")
 function touristLog() {
   var user=$("#tUsrName").val();
   var pass=$("#tUsrPass").val();
-  $.post("/tLogin", {usrName: user, usrPass: pass}, function(data){
+  $.post("/torLogin", {usrName: user, usrPass: pass}, function(data){
     console.log(user);
     console.log(pass);
     // var arr = JSON.parse(data);
@@ -43,6 +43,33 @@ function touristLog() {
     for (i = 0; i < arr.length; i++) {
     console.log(arr[i].username);
     console.log(arr[i].password);
+    if (user===arr[i].username && pass===arr[i].password) {
+      window.location.href='/page9'
+    } else {
+      window.location.href="/page11"
+    }
     }
   })
+  alert("processing...")
+}
+
+function localLog() {
+  var user=$("#lUsrName").val();
+  var pass=$("#lUsrPass").val();
+  $.post("/locLogin", {usrName: user, usrPass: pass}, function(data){
+    console.log(user);
+    console.log(pass);
+    // var arr = JSON.parse(data);
+    var arr = data
+    for (i = 0; i < arr.length; i++) {
+    console.log(arr[i].username);
+    console.log(arr[i].password);
+    if (user===arr[i].username && pass===arr[i].password) {
+      window.location.href='/page9'
+    } else {
+      window.location.href="/page12"
+    }
+    }
+  })
+  alert("processing...")
 }

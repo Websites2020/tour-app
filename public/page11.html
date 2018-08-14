@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Tour With a Local -- Local Log In</title>
+    <title>Tour With a Local -- Tourist Log In</title>
 
     
 
@@ -58,16 +58,23 @@
         </div>
         <br>
         <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="alert alert-danger" role="alert">
+                            Wrong Password.  Please try again.
+                        </div>    
+                    </div>
+                </div>
         <div class="row">
             <div class="col-md-4"></div>
             <div class="col-md-4">
-                <h3 class="loginTitle">Log in as a Local Guide.</h3>
+                <h3 class="loginTitle">Log in as a Tourist.</h3>
                 <br>
-                <form style="font-size: 18px;" onsubmit="localLog()">
+                <form style="font-size: 18px;" onsubmit="touristLog()">
                     Username:<br>
-                    <input id="lUsrName" style="font-size: 18px; width: 100%;" type="text" required><br>
+                    <input id="tUsrName" style="font-size: 18px; width: 100%;" type="text" required><br>
                     Password:<br>
-                    <input id="lUsrPass" style="font-size: 18px; width: 100%;" type="password" required><br><br>
+                    <input id="tUsrPass" style="font-size: 18px; width: 100%;" type="password" required><br><br>
                     <div class="loginButton"><input class="btn btn-primary" style="width: 100%" type="submit"></div>
                 </form>
             </div>
