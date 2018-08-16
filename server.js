@@ -87,7 +87,7 @@ con.connect(function(err) {
 
 app.post('/insert', function(req, res) {
     if (err) throw err;
-    console.log("Connected!");
+    // console.log("Connected!");
     var city = req.body.city;
     var country = req.body.country;
     var description = req.body.description;
@@ -99,9 +99,9 @@ app.post('/insert', function(req, res) {
     var sql = `INSERT INTO tours (city, country, description, people, date, time, email, budget) VALUES ('${city}', '${country}', '${description}', '${people}', '${date}', '${time}', '${email}', '${budget}')`;
     con.query(sql, function (err, result) {
       if (err) throw err;
-      console.log("1 record inserted");
+      // console.log("1 record inserted");
     });
-  res.sendfile("public/page1.html");
+  res.sendfile("public/index.html");
   app.use(express.static(__dirname + '/public'));
 })
 
@@ -109,21 +109,21 @@ app.get('/show',function(req,res){
     if (err) throw err;
     con.query("SELECT * FROM tours ORDER BY tourID DESC", function (err, result, fields) {
       if (err) throw err;
-      console.log(result);
+      // console.log(result);
       res.json(result);
     });
 });
 
 app.post('/addTourist', function(req,res) {
   if (err) throw err;
-  console.log(req.body);
+  // console.log(req.body);
     var usrName = req.body.usrName;
     var usrEmail = req.body.usrEmail;
     var usrPass = req.body.usrPass;
     var sql2 = `INSERT IGNORE INTO tourists (username, email, password) VALUES ('${usrName}', '${usrEmail}', '${usrPass}')`;
     con.query(sql2, function (err, result) {
       // if (err) throw err;
-      console.log(result)
+      // console.log(result)
       res.json(result)
     });
     // res.sendfile("public/index.html");
@@ -132,14 +132,14 @@ app.post('/addTourist', function(req,res) {
 
 app.post('/addLocal', function(req,res) {
   if (err) throw err;
-  console.log(req.body);
+  // console.log(req.body);
     var usrName = req.body.usrName;
     var usrEmail = req.body.usrEmail;
     var usrPass = req.body.usrPass;
     var sql3 = `INSERT IGNORE INTO locals (username, email, password) VALUES ('${usrName}', '${usrEmail}', '${usrPass}')`;
     con.query(sql3, function (err, result) {
       // if (err) throw err;
-      console.log(result)
+      // console.log(result)
       res.json(result)
     });
     // res.sendfile("public/index.html");
@@ -148,44 +148,44 @@ app.post('/addLocal', function(req,res) {
 
 app.post('/torLogin', function(req, res) {
   if (err) throw err;
-  console.log(req.body);
+  // console.log(req.body);
     var adr = req.body.usrName
     var sql = `SELECT * FROM tourists WHERE username = ?`;
     con.query(sql, [adr], function (err, result) {
     if (err) throw err;
-      console.log(result);
+      // console.log(result);
       res.json(result);
   });
 })
 
 app.post('/locLogin', function(req, res) {
   if (err) throw err;
-  console.log(req.body);
+  // console.log(req.body);
     var adr = req.body.usrName
     var sql = `SELECT * FROM locals WHERE username = ?`;
     con.query(sql, [adr], function (err, result) {
     if (err) throw err;
-      console.log(result);
+      // console.log(result);
       res.json(result);
   });
 })
 
 app.post('/matchTourist', function(req, res) {
   if (err) throw err;
-  console.log(req.body);
+  // console.log(req.body);
     var usr = req.body.usrName
     var pass = req.body.usrPass
     var sql = `SELECT * FROM tourists WHERE username = "${usr}" AND password = "${pass}"`;
     con.query(sql, function (err, result) {
     if (err) throw err;
-      console.log(result);
+      // console.log(result);
       res.json(result);
   });
 })
 
 app.post('/insertAcc', function(req, res) {
   if (err) throw err;
-  console.log("Connected!");
+  // console.log("Connected!");
   var city = req.body.city;
   var country = req.body.country;
   var description = req.body.description;
@@ -198,9 +198,9 @@ app.post('/insertAcc', function(req, res) {
   var sql = `INSERT INTO tours (city, country, description, people, date, time, email, budget, userID) VALUES ('${city}', '${country}', '${description}', '${people}', '${date}', '${time}', '${email}', '${budget}',(SELECT userID from tourists where username = '${user}'))`;
   con.query(sql, function (err, result) {
     if (err) throw err;
-    console.log("1 record inserted");
+    // console.log("1 record inserted");
   });
-  res.sendfile("public/page5.html");
+  res.sendfile("public/index.html");
   app.use(express.static(__dirname + '/public'));
 })
 
@@ -209,7 +209,7 @@ app.post('/showTAcc',function(req,res){
   var usr = req.body.usrID
   con.query(`SELECT * FROM tours WHERE userID = "${usr}" ORDER BY tourID DESC`, function (err, result, fields) {
     if (err) throw err;
-    console.log(result);
+    // console.log(result);
     res.json(result);
   });
 });
@@ -219,7 +219,7 @@ app.post('/deleteListing',function(req,res){
   var tourID = req.body.tourID
   con.query(`DELETE FROM tours WHERE tourID='${tourID}';`, function (err, result) {
     if (err) throw err;
-    console.log("Number of records deleted: " + result.affectedRows);
+    // console.log("Number of records deleted: " + result.affectedRows);
     res.json(result);
   });
 });

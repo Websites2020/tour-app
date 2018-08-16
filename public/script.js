@@ -1,4 +1,4 @@
-var arr;
+// var arr;
 
 $('.carousel').carousel({
     interval: 10,
@@ -6,15 +6,15 @@ $('.carousel').carousel({
   })
 
 function tourReq() {
-    alert("Your tour request has been made.  Thank you.  Hang tight as locals will contact you about it via email.")
+    alert("Your tour request has been made.  Thank you.  Hang tight as locals will contact you about it via the email you provided.")
 }
 
 function getData() {
     $.get("/show", function(data, status){
-        console.log("getData works")
+        // console.log("getData works")
         // var arr = JSON.parse(data);
         var arr = data;
-        console.log(data);
+        // console.log(data);
         for (var i=0; i<arr.length; i++)
     {
        $("#listings").append(`
@@ -23,7 +23,7 @@ function getData() {
         <div class="card-body">
         <h5 class="card-title"><b>City:</b> ${arr[i].city}</h5>
         <div style="list-style-type: none;" class="card-text">
-        <p><b>Description:</b> ${arr[i].description}<br><b>Number of People:</b> ${arr[i].people}<br><b>Date (YYYY/MM/DD):</b> ${arr[i].date}<br><b>Time:</b> ${arr[i].time}<br><b>Offer (in local currency):</b> ${arr[i].budget}</p>
+        <p><b>Description:</b> ${arr[i].description}<br><b>Number of People:</b> ${arr[i].people}<br><b>Date (YYYY/MM/DD):</b> ${arr[i].date}<br><b>Time:</b> ${arr[i].time}<br><b>Offer (in local currency):</b> ${arr[i].budget}.00</p>
         </div>
         <button id='myBtn${arr[i].tourID}' value='${arr[i].email}' href="#" class="btn btn-primary">Contact</button>
         </div>
@@ -36,7 +36,7 @@ function getData() {
         var modal = document.getElementById('myModal');
 
         btn.onclick = function() {
-            console.log(this.value);
+            // console.log(this.value);
             sessionStorage.setItem('email', this.value);
             modal.style.display = "block";
         }
@@ -75,7 +75,7 @@ function send(e) {
     var form = document.getElementById("sendEmail");
 
     var mailTo = sessionStorage.getItem('email');;
-    console.log(mailTo)
+    // console.log(mailTo)
     form.action = `mailto:${mailTo}`;
     form.submit()
     var modal = document.getElementById('myModal');

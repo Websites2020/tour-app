@@ -4,7 +4,7 @@ function loadTourist() {
     var tpass = sessionStorage.getItem("password");
 
     $.post("/matchTourist", {usrName: tuser, usrPass: tpass}, function(data){
-        console.log(data[0])
+        // console.log(data[0])
         if (data[0].username===tuser && data[0].password===tpass) {
 
     $("#tLoad").append(
@@ -64,20 +64,20 @@ function loadTourist() {
     </form>
             </div>
             <div class="col-md-7">
-            <h1>Your Active Tour Requests</h1>
+            <h3>Your Active Tour Requests</h3>
             <br>
             <div id="touristListings"></div>
             </div>
         </div>
     </div>
-    <footer><hr>Daniel Button &copy; 2018</footer>`
+    <footer><hr>Daniel Button &copy; 2018<span class="ourEmail">contact: tourwithalocal.us@gmail.com</span></footer>`
     )
 
     $.post("/showTAcc", {usrID: data[0].userID}, function(data2, status){
-        console.log("getdata2 works")
+        // console.log("getdata2 works")
         // var arr = JSON.parse(data2);
         var arr = data2;
-        console.log(data2);
+        // console.log(data2);
         for (var i=0; i<arr.length; i++)
     {
         $("#touristListings").append(`
@@ -96,9 +96,9 @@ function loadTourist() {
 
         var deleteBtn = document.getElementById(`deleteBtn${arr[i].tourID}`);
         deleteBtn.onclick = function() {
-            console.log(this.value)
+            // console.log(this.value)
             $.post("/deleteListing", {tourID: this.value}, function(data3, status){
-                console.log(data3)
+                // console.log(data3)
                 window.location.href = "/page9"
             })
         }

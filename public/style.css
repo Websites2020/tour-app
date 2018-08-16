@@ -44,6 +44,11 @@ footer {
     /* background-image: url("https://www.transparenttextures.com/patterns/diagmonds-light.png"); */
 }
 
+.ourEmail {
+    float: right;
+    padding: 0 10px;
+}
+
 /* .footer {
     position: absolute;
     bottom: 0%;
