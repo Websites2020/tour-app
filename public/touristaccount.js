@@ -23,14 +23,8 @@ function loadTourist() {
                                 <li class="nav-item">
                                     <a class="nav-link" href="/page3">Sign Up</a>
                                 </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Log In
-                                    </a>
-                                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                            <a class="dropdown-item" href="/page5">Tourist</a>
-                                            <a class="dropdown-item" href="/page6">Local Guide</a>
-                                        </div>
+                                <li class="nav-item">
+                                    <a class="nav-link" onclick="logOut()" href="#">Log Out</a>
                                 </li>
                                 <!-- <div id="google_translate_element"></div> -->
                             </ul>
@@ -60,7 +54,7 @@ function loadTourist() {
         Desired time? (hh:mm am/pm)<br>
         <input style="font-size: 18px;" id="time" type="time" name="time" required><br>
         What is the best contact email?<span class="notice">&nbsp;( i )</span>
-        <div style="font-size: 18px;" class="noticebox">This will be the email locals will contact you at about your tour and will be publicly visible.  If you need to set up a free temporary email address you can do so with Gmail, Yahoo! or Hotmail.</div><br>
+        <div style="font-size: 18px;" class="noticebox">This will be the email Locals will contact you at about your tour and will be publicly visible.  If you need to set up a free temporary email address you can do so with Gmail, Yahoo! or Hotmail.</div><br>
         <input style="font-size: 18px;" id="email" type="email" name="email" maxlength="99" required><br>
         How much do you want to offer your Local Guide?<span class="notice">&nbsp;( i )</span>
         <div style="font-size: 18px;" class="noticebox">This is the amount you are offering to pay your Local Guide in their local currency and does not include extras like tickets, food, or entrance fees.</div><br>
@@ -71,9 +65,8 @@ function loadTourist() {
             </div>
             <div class="col-md-7">
             <h1>Your Active Tour Requests</h1>
-            
+            <br>
             <div id="touristListings"></div>
-                
             </div>
         </div>
     </div>
@@ -95,17 +88,18 @@ function loadTourist() {
         <div style="list-style-type: none;" class="card-text">
         <p><b>Description:</b> ${arr[i].description}<br><b>Number of People:</b> ${arr[i].people}<br><b>Date (YYYY/MM/DD):</b> ${arr[i].date}<br><b>Time:</b> ${arr[i].time}<br><b>Offer (in local currency):</b> ${arr[i].budget}<br><b>Email:</b> ${arr[i].email}</p>
         </div>
-        <button id='deleteBtn' value='${arr[i].tourID}' class="btn btn-danger">Delete</button>
+        <button id='deleteBtn${arr[i].tourID}' value='${arr[i].tourID}' class="btn btn-danger">Delete</button>
         </div>
         </div>
         <br>
         `);
 
-        var deleteBtn = document.getElementById(`deleteBtn`);
+        var deleteBtn = document.getElementById(`deleteBtn${arr[i].tourID}`);
         deleteBtn.onclick = function() {
-            console.log(deleteBtn.value)
-            $.post("/deleteListing", {tourID: deleteBtn.value}, function(data3, status){
+            console.log(this.value)
+            $.post("/deleteListing", {tourID: this.value}, function(data3, status){
                 console.log(data3)
+                window.location.href = "/page9"
             })
         }
 
@@ -125,5 +119,10 @@ function loadTourist() {
 
     }) // end matchTourist post
 
-// alert(`Welcome ${tuser}`)
 }  // end loadTourist function
+
+function logOut() {
+    sessionStorage.removeItem("user");
+    sessionStorage.removeItem("password");
+    window.location.href = "/page5";
+}

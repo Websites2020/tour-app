@@ -70,10 +70,11 @@ function localLog() {
     console.log(arr[i].password);
     if (user===arr[i].username && pass===arr[i].password) {
 
-      sessionStorage.setItem("user", arr[i].username);
-      sessionStorage.setItem("password", arr[i].password);
-      
-      window.location.href='/page9'
+      sessionStorage.setItem("userL", arr[i].username);
+      sessionStorage.setItem("passwordL", arr[i].password);
+
+      // window.location.href='/page10'
+      window.location.href='/page2'
     } else {
       window.location.href="/page12"
     }

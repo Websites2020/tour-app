@@ -1,13 +1,13 @@
 body {
     /* background: orange; */
     background-color: #ffffff;
-    background-image: url("https://www.transparenttextures.com/patterns/diagmonds-light.png");
+    /* background-image: url("https://www.transparenttextures.com/patterns/diagmonds-light.png"); */
 }
 
 .navbar {
     font-size: 20px;
     background: white;
-    background-image: url("https://www.transparenttextures.com/patterns/diagmonds-light.png");
+    /* background-image: url("https://www.transparenttextures.com/patterns/diagmonds-light.png"); */
 }
 
 .title {
@@ -24,8 +24,11 @@ body {
 }
 
 #buttonGroup {
-    top: 20%;
+    top: 15%;
     bottom: auto;
+    /* background: white; */
+    padding: 30px;
+    /* border-radius: 20px; */
 }
 
 .loginTitle {
@@ -38,7 +41,7 @@ body {
 
 footer {
     background: white;
-    background-image: url("https://www.transparenttextures.com/patterns/diagmonds-light.png");
+    /* background-image: url("https://www.transparenttextures.com/patterns/diagmonds-light.png"); */
 }
 
 /* .footer {
