@@ -170,6 +170,60 @@ app.post('/locLogin', function(req, res) {
   });
 })
 
+app.post('/matchTourist', function(req, res) {
+  if (err) throw err;
+  console.log(req.body);
+    var usr = req.body.usrName
+    var pass = req.body.usrPass
+    var sql = `SELECT * FROM tourists WHERE username = "${usr}" AND password = "${pass}"`;
+    con.query(sql, function (err, result) {
+    if (err) throw err;
+      console.log(result);
+      res.json(result);
+  });
+})
+
+app.post('/insertAcc', function(req, res) {
+  if (err) throw err;
+  console.log("Connected!");
+  var city = req.body.city;
+  var country = req.body.country;
+  var description = req.body.description;
+  var people = req.body.people;
+  var date = req.body.date;
+  var time = req.body.time;
+  var email = req.body.email;
+  var budget = req.body.budget;
+  var user = req.body.user;
+  var sql = `INSERT INTO tours (city, country, description, people, date, time, email, budget, userID) VALUES ('${city}', '${country}', '${description}', '${people}', '${date}', '${time}', '${email}', '${budget}',(SELECT userID from tourists where username = '${user}'))`;
+  con.query(sql, function (err, result) {
+    if (err) throw err;
+    console.log("1 record inserted");
+  });
+  res.sendfile("public/page5.html");
+  app.use(express.static(__dirname + '/public'));
+})
+
+app.post('/showTAcc',function(req,res){
+  if (err) throw err;
+  var usr = req.body.usrID
+  con.query(`SELECT * FROM tours WHERE userID = "${usr}" ORDER BY tourID DESC`, function (err, result, fields) {
+    if (err) throw err;
+    console.log(result);
+    res.json(result);
+  });
+});
+
+app.post('/deleteListing',function(req,res){
+  if (err) throw err;
+  var tourID = req.body.tourID
+  con.query(`DELETE FROM tours WHERE tourID='${tourID}';`, function (err, result) {
+    if (err) throw err;
+    console.log("Number of records deleted: " + result.affectedRows);
+    res.json(result);
+  });
+});
+
 }); //end con.connect
 
 app.listen(3000,function(){

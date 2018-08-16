@@ -44,6 +44,10 @@ function touristLog() {
     console.log(arr[i].username);
     console.log(arr[i].password);
     if (user===arr[i].username && pass===arr[i].password) {
+
+      sessionStorage.setItem("user", arr[i].username);
+      sessionStorage.setItem("password", arr[i].password);
+      
       window.location.href='/page9'
     } else {
       window.location.href="/page11"
@@ -65,6 +69,10 @@ function localLog() {
     console.log(arr[i].username);
     console.log(arr[i].password);
     if (user===arr[i].username && pass===arr[i].password) {
+
+      sessionStorage.setItem("user", arr[i].username);
+      sessionStorage.setItem("password", arr[i].password);
+      
       window.location.href='/page9'
     } else {
       window.location.href="/page12"

@@ -1,31 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Tour With A Local -- Post Tour Request</title>
+function loadTourist() {
 
-    
+    var tuser = sessionStorage.getItem("user");
+    var tpass = sessionStorage.getItem("password");
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    $.post("/matchTourist", {usrName: tuser, usrPass: tpass}, function(data){
+        console.log(data[0])
+        if (data[0].username===tuser && data[0].password===tpass) {
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> 
-
-    <link rel="stylesheet" href="./style.css">
-    <script type="text/javascript" src="./script.js"></script>
-
-</head>
-<body>
-        <div class="row">
+    $("#tLoad").append(
+        `<div class="row">
                 <div class="col-md-12">
                     <header>
                     <nav class="navbar">
@@ -61,7 +44,9 @@
             <div class="col-md-5">
                 <h3>Tourists: Create a Tour Request</h3>
     <!-- <form onsubmit="store()"> -->
-    <form style="font-size: 18px;" onsubmit="tourReq()" action="/insert" method="POST">
+    <form style="font-size: 18px;" onsubmit="tourReq()" action="/insertAcc" method="POST">
+        Username (not publicly displayed):<br>
+        <input style="font-size: 18px;" id="user" type="text" name="user" value=${data[0].username} readonly><br>
         In what city would you like your tour to be in?<br>
         <input style="font-size: 18px;" id="location" type="text" name="city" maxlength="99" required><br>
         What state or country is the city in?<br>
@@ -85,10 +70,60 @@
     </form>
             </div>
             <div class="col-md-7">
-                <img id="touristImg" class="rounded" src="./images/tourist1.jpg" alt="Tourist">
+            <h1>Your Active Tour Requests</h1>
+            
+            <div id="touristListings"></div>
+                
             </div>
         </div>
     </div>
-</body>
-<footer><hr>Daniel Button &copy; 2018</footer>
-</html>
+    <footer><hr>Daniel Button &copy; 2018</footer>`
+    )
+
+    $.post("/showTAcc", {usrID: data[0].userID}, function(data2, status){
+        console.log("getdata2 works")
+        // var arr = JSON.parse(data2);
+        var arr = data2;
+        console.log(data2);
+        for (var i=0; i<arr.length; i++)
+    {
+        $("#touristListings").append(`
+        <div class="card border-info">
+        <h5 class="card-header"><b>State/Country:</b> ${arr[i].country}</h5>
+        <div class="card-body">
+        <h5 class="card-title"><b>City:</b> ${arr[i].city}</h5>
+        <div style="list-style-type: none;" class="card-text">
+        <p><b>Description:</b> ${arr[i].description}<br><b>Number of People:</b> ${arr[i].people}<br><b>Date (YYYY/MM/DD):</b> ${arr[i].date}<br><b>Time:</b> ${arr[i].time}<br><b>Offer (in local currency):</b> ${arr[i].budget}<br><b>Email:</b> ${arr[i].email}</p>
+        </div>
+        <button id='deleteBtn' value='${arr[i].tourID}' class="btn btn-danger">Delete</button>
+        </div>
+        </div>
+        <br>
+        `);
+
+        var deleteBtn = document.getElementById(`deleteBtn`);
+        deleteBtn.onclick = function() {
+            console.log(deleteBtn.value)
+            $.post("/deleteListing", {tourID: deleteBtn.value}, function(data3, status){
+                console.log(data3)
+            })
+        }
+
+}}) // end showTAcc
+
+        } // end if statement
+        else {
+            $("#tLoad").prepend(`<div class="container">
+            <div class='row'>
+            <div class="col-md-12">
+            <h1>User account unidentifiable.  Please enable cookies</h1>
+            <a href="/">Home</a>
+            </div>
+            </div>
+            </div>`)
+        } // end else statement
+
+    }) // end matchTourist post
+
+// alert(`Welcome ${tuser}`)
+}  // end loadTourist function
