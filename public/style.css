@@ -18,18 +18,22 @@ body {
     font-size: 35px;
 }
 
-#google_translate_element {
-    float: right;
-    /* margin: 0 50px 0 0; */
+#clickHere {
+    text-align: center;
 }
 
-#buttonGroup {
-    top: 15%;
-    bottom: auto;
+/* #google_translate_element {
+    float: right;
+    /* margin: 0 50px 0 0; */
+/* } */
+
+/* #buttonGroup { */
+    /* top: 15%; */
+    /* bottom: auto; */
     /* background: white; */
-    padding: 30px;
+    /* padding: 30px; */
     /* border-radius: 20px; */
-}
+/* } */
 
 .loginTitle {
     text-align: center;

@@ -28,7 +28,7 @@ if (usrData === "1") {
             }
         });
 }
-alert("processing...")
+alert("thank you")
 }
 
 
@@ -54,7 +54,7 @@ function touristLog() {
     }
     }
   })
-  alert("processing...")
+  alert("thank you")
 }
 
 function localLog() {
@@ -74,11 +74,11 @@ function localLog() {
       sessionStorage.setItem("passwordL", arr[i].password);
 
       // window.location.href='/page10'
-      window.location.href='/page10'
+      window.location.href='/page2'
     } else {
       window.location.href="/page12"
     }
     }
   })
-  alert("processing...")
+  alert("thank you")
 }

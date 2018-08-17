@@ -14,9 +14,9 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 var con = mysql.createConnection({
-  host: process.env.RDS_HOSTNAME || "localhost",
-  user: process.env.RDS_USERNAME || "root",
-  password: process.env.RDS_PASSWORD || "",
+  host: process.env.RDS_HOSTNAME,
+  user: process.env.RDS_USERNAME,
+  password: process.env.RDS_PASSWORD,
   port: process.env.RDS_PORT,
   database: "ebdb"
 });
