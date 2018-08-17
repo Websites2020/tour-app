@@ -5,6 +5,8 @@ var app = express();
 var mysql = require('mysql');
 var bodyParser = require('body-parser')
 
+var port = process.env.PORT || 8080;
+
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
 
@@ -12,10 +14,11 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 var con = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "",
-  database: "toursDB"
+  host: process.env.RDS_HOSTNAME || "localhost",
+  user: process.env.RDS_USERNAME || "root",
+  password: process.env.RDS_PASSWORD || "",
+  port: process.env.RDS_PORT,
+  database: "ebdb"
 });
 
 app.get('/',function(req,res){
@@ -226,6 +229,7 @@ app.post('/deleteListing',function(req,res){
 
 }); //end con.connect
 
-app.listen(3000,function(){
-  console.log("Started on PORT 3000");
+// app.listen(3000)
+app.listen(port, function(){
+  console.log("Started on PORT 8080");
 })
