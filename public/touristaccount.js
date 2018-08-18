@@ -39,12 +39,14 @@ function loadTourist() {
                 <h3>Tourists: Create a Tour Request</h3>
     <!-- <form onsubmit="store()"> -->
     <form style="font-size: 18px;" onsubmit="tourReq()" action="/insertAcc" method="POST">
-        Username (not publicly displayed):<br>
+        Username: <span class="helperText2">(not publicly displayed)</span><br>
         <input style="font-size: 18px;" id="user" type="text" name="user" value=${data[0].username} readonly><br>
+        <b>Location Details:</b><br>
         In what city would you like your tour to be in?<br>
         <input style="font-size: 18px;" id="location" type="text" name="city" maxlength="99" required><br>
         What state or country is the city in?<br>
         <input style="font-size: 18px;" id="state" type="text" name="country" maxlength="99" required><br>
+        <b>Tour Details:</b><br>
         What do you want to see/do on your tour?<br>
         <textarea style="font-size: 18px;" id="description" class="large-text-box" type="text" cols="32" rows="10" name="description" maxlength="499" placeholder="Ex: Vist museums, eat lunch at a local cafe, see street art." required></textarea><br>
         How many people are going to be on this tour?<br>
@@ -53,12 +55,11 @@ function loadTourist() {
         <input style="font-size: 18px;" id="date" type="date" name="date" required><br>
         Desired time? (hh:mm am/pm)<br>
         <input style="font-size: 18px;" id="time" type="time" name="time" required><br>
-        What is the best contact email?<span class="notice">&nbsp;( i )</span>
-        <div style="font-size: 18px;" class="noticebox">This will be the email Locals will contact you at about your tour and will be publicly visible.  If you need to set up a free temporary email address you can do so with Gmail, Yahoo! or Hotmail.</div><br>
-        <input style="font-size: 18px;" id="email" type="email" name="email" maxlength="99" required><br>
-        How much do you want to offer your Local Guide?<span class="notice">&nbsp;( i )</span>
-        <div style="font-size: 18px;" class="noticebox">This is the amount you are offering to pay your Local Guide in their local currency and does not include extras like tickets, food, or entrance fees.</div><br>
-        <input style="font-size: 18px;" id="offer" type="number" name="budget" min="1" max="99999" required><br>
+        <b>Posting Details:</b><br>
+        What is the best contact email?<br>
+        <input style="font-size: 18px;" id="email" type="email" name="email" maxlength="99" required><span class="helperText2">(publicly displayed)</span><br>
+        How much do you want to offer your Local Guide?<br>
+        <input style="font-size: 18px;" id="offer" type="number" name="budget" min="1" max="99999" required><span class="helperText2">(in visting country's currency)</span><br><br>
         <!-- <button type="button" onclick="store()">Submit</button> -->
         <input class="btn btn-primary" type="submit">
     </form>
@@ -70,7 +71,7 @@ function loadTourist() {
             </div>
         </div>
     </div>
-    <footer><hr>Daniel Button &copy; 2018<span class="ourEmail">Questions, Comments, Help? Contact: tourwithalocal.us@gmail.com</span></footer>`
+    <footer><hr>&nbsp;Daniel Button &copy; 2018<span class="ourEmail">Questions, Comments, Help? Contact: tourwithalocal.us@gmail.com</span></footer>`
     )
 
     $.post("/showTAcc", {usrID: data[0].userID}, function(data2, status){

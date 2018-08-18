@@ -19,11 +19,10 @@ function getData() {
     {
        $("#listings").append(`
         <div class="card">
-        <h5 class="card-header"><b>State/Country:</b> ${arr[i].country}</h5>
+        <h5 class="card-header"><b>City:</b> ${arr[i].city}<br><b>State/Country:</b> ${arr[i].country}</h5>
         <div class="card-body">
-        <h5 class="card-title"><b>City:</b> ${arr[i].city}</h5>
         <div style="list-style-type: none;" class="card-text">
-        <p><b>Description:</b> ${arr[i].description}<br><b>Number of People:</b> ${arr[i].people}<br><b>Date (YYYY/MM/DD):</b> ${arr[i].date}<br><b>Time:</b> ${arr[i].time}<br><b>Offer (in local currency):</b> ${arr[i].budget}.00</p>
+        <p><b>Description:</b> ${arr[i].description}<br><b>Number of People:</b> ${arr[i].people}<br><b>Date:</b> <span class="helperText">(YYYY/MM/DD)</span> ${arr[i].date}<br><b>Time:</b> ${arr[i].time}<br><b>Offer:</b> <span class="helperText">(in local currency)</span> ${arr[i].budget}.00</p>
         </div>
         <button id='myBtn${arr[i].tourID}' value='${arr[i].email}' href="#" class="btn btn-primary">Contact</button>
         </div>
