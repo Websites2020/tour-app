@@ -6,7 +6,7 @@ $('.carousel').carousel({
   })
 
 function tourReq() {
-    alert("Your tour request has been made.  Thank you.  Hang tight as locals will contact you about it via the email you provided.")
+    alert("Your tour request has been made.  Thank you.  We are now using are patented system in finding Locals to be your tour guide.")
 }
 
 function getData() {
@@ -18,7 +18,7 @@ function getData() {
         for (var i=0; i<arr.length; i++)
     {
        $("#listings").append(`
-        <div class="card border-info">
+        <div class="card">
         <h5 class="card-header"><b>State/Country:</b> ${arr[i].country}</h5>
         <div class="card-body">
         <h5 class="card-title"><b>City:</b> ${arr[i].city}</h5>

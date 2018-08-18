@@ -70,7 +70,7 @@ function loadTourist() {
             </div>
         </div>
     </div>
-    <footer><hr>Daniel Button &copy; 2018<span class="ourEmail">contact: tourwithalocal.us@gmail.com</span></footer>`
+    <footer><hr>Daniel Button &copy; 2018<span class="ourEmail">Questions, Comments, Help? Contact: tourwithalocal.us@gmail.com</span></footer>`
     )
 
     $.post("/showTAcc", {usrID: data[0].userID}, function(data2, status){

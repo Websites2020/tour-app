@@ -86,6 +86,11 @@ app.get('/page12', function(req,res) {
   app.use(express.static(__dirname + '/public'));
 });
 
+app.get('/test',function(req,res){
+  res.sendfile("public/test.html");
+  app.use(express.static(__dirname + '/public'));
+});
+
 con.connect(function(err) {
 
 app.post('/insert', function(req, res) {

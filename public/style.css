@@ -1,7 +1,8 @@
 body {
     /* background: orange; */
-    background-color: #ffffff;
-    /* background-image: url("https://www.transparenttextures.com/patterns/diagmonds-light.png"); */
+    /* background-color: #ffffff; */
+    background-color: white;
+    /* background-image: url("./images/postcard.jpg"); */
 }
 
 .navbar {
@@ -20,6 +21,15 @@ body {
 
 #clickHere {
     text-align: center;
+}
+
+#indexDescription {
+    text-align: center;
+}
+
+.helperText {
+    color: gray;
+    font-size: 14px;
 }
 
 /* #google_translate_element {
