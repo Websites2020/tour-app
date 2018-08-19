@@ -31,8 +31,14 @@
                     <nav class="navbar">
                         <span class="title"><a href="/"><img src="./images/logo.png" height="70px" alt="logo"></a>&trade;</span>
                             <ul class="nav justify-content-end">
-                                <li class="nav-item">
+                                <!-- <li class="nav-item">
                                     <a class="nav-link" href="/">Home</a>
+                                </li> -->
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/page1">Post</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/page2">Search</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="page4">How it Works</a>
@@ -59,7 +65,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-5">
-                <h3>Create a Custom Tour Request</h3>
+                <h3>Create a Custom Tour</h3>
                 <br>
     <!-- <form onsubmit="store()"> -->
     <form style="font-size: 18px;" onsubmit="tourReq()" action="/insert" method="POST">
@@ -87,7 +93,7 @@
         <div style="font-size: 18px;" class="noticebox">This is the amount you are offering to pay your Local Guide in their local currency and does not include extras like tickets, food, or entrance fees.</div><br> -->
         <input style="font-size: 18px;" id="offer" type="number" name="budget" min="1" max="99999" required><span class="helperText2">(in visiting country's currency)</span><br><br>
         <!-- <button type="button" onclick="store()">Submit</button> -->
-        <input class="btn btn-primary" type="submit">
+        <input class="btn btn-primary" type="submit" value="Post">
     </form>
             </div>
             <div class="col-md-7">

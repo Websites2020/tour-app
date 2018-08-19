@@ -15,7 +15,10 @@ function loadTourist() {
                         <span class="title"><img src="./images/logo.png" height="70px" alt="logo">&trade;</span>
                             <ul class="nav justify-content-end">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/">Home</a>
+                                    <a class="nav-link" href="/page1">Post</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/page2">Search</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="page4">How it Works</a>
@@ -36,7 +39,7 @@ function loadTourist() {
     <div class="container">
         <div class="row">
             <div class="col-md-5">
-                <h3>Tourists: Create a Tour Request</h3>
+                <h3>Tourists: Create a Tour</h3>
     <!-- <form onsubmit="store()"> -->
     <form style="font-size: 18px;" onsubmit="tourReq()" action="/insertAcc" method="POST">
         Username: <span class="helperText2">(not publicly displayed)</span><br>
@@ -61,7 +64,7 @@ function loadTourist() {
         How much do you want to offer your Local Guide?<br>
         <input style="font-size: 18px;" id="offer" type="number" name="budget" min="1" max="99999" required><span class="helperText2">(in visting country's currency)</span><br><br>
         <!-- <button type="button" onclick="store()">Submit</button> -->
-        <input class="btn btn-primary" type="submit">
+        <input class="btn btn-primary" type="submit" value="Post">
     </form>
             </div>
             <div class="col-md-7">
