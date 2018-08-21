@@ -5,6 +5,22 @@ body {
     /* background-image: url("./images/postcard.jpg"); */
 }
 
+.loginBody {
+    /* background: orange; */
+    /* background-color: #ffffff; */
+    background-color: white;
+    /* background-image: url("./images/postcard.jpg"); */
+    min-height: 100vh;
+}
+
+/* .howtoBody {
+    background-image: url("./images/lets-go-travel.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+} */
+
 .home {
     background-image: url("./images/beach.jpg");
     background-repeat: no-repeat;
@@ -84,11 +100,11 @@ footer {
     padding: 0 10px;
 }
 
-/* .footer {
-    position: absolute;
+.footer {
+    position: fixed;
     bottom: 0%;
     width: 100%;
-} */
+}
 
 input {
     margin: 5px;
@@ -161,5 +177,12 @@ button {
 @media screen and (max-width: 1100px) {
     #touristImg {
         visibility: hidden;
+    }
+    .loginBody {
+        /* background: orange; */
+        /* background-color: #ffffff; */
+        background-color: white;
+        /* background-image: url("./images/postcard.jpg"); */
+        min-height: 150vh;
     }
 }
