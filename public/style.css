@@ -13,6 +13,11 @@ body {
     min-height: 100vh;
 }
 
+.signupBody {
+    background-color: white;
+    min-height: 160vh;
+}
+
 /* .howtoBody {
     background-image: url("./images/lets-go-travel.jpg");
     background-repeat: no-repeat;
@@ -183,6 +188,10 @@ button {
         /* background-color: #ffffff; */
         background-color: white;
         /* background-image: url("./images/postcard.jpg"); */
+        min-height: 150vh;
+    }
+    .signupBody {
+        background-color: white;
         min-height: 150vh;
     }
 }
