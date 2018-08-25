@@ -18,7 +18,7 @@ function getData() {
         for (var i=0; i<arr.length; i++)
     {
        $("#listings").append(`
-        <div class="card">
+        <div class="card" style="box-shadow: 10px 10px grey;">
         <h5 class="card-header"><b>City:</b> ${arr[i].city}<br><b>State/Country:</b> ${arr[i].country}</h5>
         <div class="card-body">
         <div style="list-style-type: none;" class="card-text">
@@ -93,3 +93,21 @@ function signup(){
 // function construction() {
 //     alert("The sign up page is currently under construction.  In the mean time, please use the account-free versions of the site.")
 // }
+
+// const countries = "http://country.io/names.json";
+
+// fetch(countries)
+// .then((resp) => resp.json())
+// .then(function(data) {
+//     let code = data;
+//     console.log((_.invert(code))[france]);
+// })
+
+// const url = "http://www.geognos.com/api/en/countries/info/"+code+".html";
+
+// fetch(url)
+// .then((resp) => resp.json())
+// .then(function(data) {
+//     let dog = data.message;
+//     console.log(dog)
+// })
