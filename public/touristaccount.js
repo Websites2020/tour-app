@@ -64,7 +64,7 @@ function loadTourist() {
         How much do you want to offer your Local Guide?<br>
         <input style="font-size: 18px;" id="offer" type="number" name="budget" min="1" max="99999" required><span class="helperText2">(in visting country's currency)</span><br><br>
         <!-- <button type="button" onclick="store()">Submit</button> -->
-        <input class="btn btn-primary" type="submit" value="Post">
+        <input class="btn btn-info" type="submit" value="Post">
     </form>
             </div>
             <div class="col-md-7">

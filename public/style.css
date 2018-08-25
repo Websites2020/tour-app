@@ -27,7 +27,7 @@ body {
 } */
 
 .home {
-    background-image: url("./images/beach.jpg");
+    background-image: url("./images/map.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -41,7 +41,9 @@ body {
 
 .navbar {
     font-size: 20px;
-    background: #4C96D7;
+    /* background: #4C96D7; */
+    /* background: #894e00; */
+    background: #9a0606;
     color: white;
     width: 100%;
 }
@@ -63,6 +65,11 @@ body {
 }
 
 #indexDescription {
+    text-align: center;
+    /* color: blue; */
+    /* -webkit-text-stroke: 1px darkblue; */
+}
+#indexDescription2 {
     text-align: center;
     /* color: blue; */
     /* -webkit-text-stroke: 1px darkblue; */
@@ -96,7 +103,9 @@ body {
 }
 
 footer {
-    background: #4C96D7;
+    /* background: #4C96D7; */
+    /* background: #894e00; */
+    background: #9a0606;
     color: white;
 }
 
