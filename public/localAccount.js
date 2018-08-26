@@ -1,12 +1,5 @@
 function loadLocal() {
 
-
-function logOut() {
-    sessionStorage.removeItem("user");
-    sessionStorage.removeItem("password");
-    window.location.href = "/page6";
-}
-
 $("#lLoad").append(`<div class="row">
 <div class="col-md-12">
     <header>
@@ -29,7 +22,7 @@ $("#lLoad").append(`<div class="row">
                     <a class="nav-link" href="/page3">Sign Up</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" onclick="logOut()" href="#">Log Out</a>
+                    <a class="nav-link" onclick="logOutb()" href="#">Log Out</a>
                 </li>
                 <!-- <div id="google_translate_element"></div> -->
             </ul>
@@ -89,30 +82,24 @@ $.get("/show", function(data, status){
     for (var i=0; i<arr.length; i++)
 {
    $("#listings").append(`
-    <div class="card" style="box-shadow: 10px 10px grey;">
-    <h5 class="card-header bg-info"><b>City:</b> ${arr[i].city}<br><b>State/Country:</b> ${arr[i].country}</h5>
-    <div class="card-body">
-    <div class="card-text">
-    <div class="row">
-    <div class="col-md-9">
-    <p><b>Description:</b> ${arr[i].description}<br><b>Number of People:</b> ${arr[i].people}<br><b>Date:</b> <span class="helperText">(YYYY/MM/DD)</span> ${arr[i].date}<br><b>Time:</b> ${arr[i].time}<br><b>Offer:</b> <span class="helperText">(in local currency)</span> ${arr[i].budget}.00</p>
-    </div>
-    <button id='myBtn${arr[i].tourID}' value='${arr[i].email}' href="#" class="btn btn-warning">Contact the Poster</button>
-    </div>
-        <div class="col-md-3">
-            <img style="float: right;" src="https://www.mapquestapi.com/staticmap/v5/map?key=Zs2Sg9rdlJl0tdV45Tu8tGlbj0QkyOJI&center=${arr[i].city},${arr[i].country}&size=200,200" srcset="https://www.mapquestapi.com/staticmap/v5/map?key=Zs2Sg9rdlJl0tdV45Tu8tGlbj0QkyOJI&center=${arr[i].city},${arr[i].country}&size=200,200@2x 2x">
-        </div>
-        </div>
-    </div>
-    </div>
+   <div class="card" style="box-shadow: 10px 10px grey;">
+   <h5 class="card-header bg-info"><b>City:</b> ${arr[i].city}<br><b>State/Country:</b> ${arr[i].country}</h5>
+   <div class="card-body">
+   <div class="card-text">
+       <div class="row">
+           <div class="col-md-9">
+   <p><b>Description:</b> ${arr[i].description}<br><b>Number of People:</b> ${arr[i].people}<br><b>Date:</b> <span class="helperText">(YYYY/MM/DD)</span> ${arr[i].date}<br><b>Time:</b> ${arr[i].time}<br><b>Offer:</b> <span class="helperText">(in local currency)</span> ${arr[i].budget}.00</p>
+   <button id='myBtn${arr[i].tourID}' value='${arr[i].email}' href="#" class="btn btn-warning">Contact the Poster</button>
+           </div>
+           <div class="col-md-3">
+   <img style="float: right;" src="https://www.mapquestapi.com/staticmap/v5/map?key=Zs2Sg9rdlJl0tdV45Tu8tGlbj0QkyOJI&center=${arr[i].city},${arr[i].country}&size=200,200" srcset="https://www.mapquestapi.com/staticmap/v5/map?key=Zs2Sg9rdlJl0tdV45Tu8tGlbj0QkyOJI&center=${arr[i].city},${arr[i].country}&size=200,200@2x 2x">
+           </div>
+       </div>
+   </div>
+   </div>
+</div>
     <br>
     `);
-
-    $.getJSON("./codes.json", function(codes){
-        code = codes[`${arr[i].country}`]
-        
-    $('.flag').append(`<img src="https://www.countryflags.io/${code}/flat/64.png" />`)
-    });
     
     var btn = document.getElementById(`myBtn${arr[i].tourID}`);
     var span = document.getElementsByClassName("close")[0];
@@ -140,4 +127,11 @@ $.get("/show", function(data, status){
 
 })
 
+}
+
+function logOutb() {
+    sessionStorage.removeItem("userL");
+    sessionStorage.removeItem("passwordL");
+    sessionStorage.removeItem("email");
+    window.location.href = "/page6";
 }
