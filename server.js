@@ -215,6 +215,19 @@ app.post('/matchTourist', function(req, res) {
   });
 })
 
+app.post('/matchLocal', function(req, res) {
+  if (err) throw err;
+  // console.log(req.body);
+    var usr = req.body.usrName
+    var pass = req.body.usrPass
+    var sql = `SELECT * FROM locals WHERE username = "${usr}" AND password = "${pass}"`;
+    con.query(sql, function (err, result) {
+    if (err) throw err;
+      // console.log(result);
+      res.json(result);
+  });
+})
+
 app.post('/insertAcc', function(req, res) {
   if (err) throw err;
   // console.log("Connected!");

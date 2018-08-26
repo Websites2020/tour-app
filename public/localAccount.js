@@ -1,5 +1,12 @@
 function loadLocal() {
 
+    var luser = sessionStorage.getItem("userL");
+    var lpass = sessionStorage.getItem("passwordL");
+
+    $.post("/matchLocal", {usrName: luser, usrPass: lpass}, function(data){
+        // console.log(data[0])
+        if (data[0].username===luser && data[0].password===lpass) {
+
 $("#lLoad").append(`<div class="row">
 <div class="col-md-12">
     <header>
@@ -128,6 +135,8 @@ $.get("/show", function(data, status){
 })
 
 }
+
+    })}
 
 function logOutb() {
     sessionStorage.removeItem("userL");
