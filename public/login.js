@@ -74,7 +74,7 @@ function localLog() {
       sessionStorage.setItem("passwordL", arr[i].password);
 
       // window.location.href='/page10'
-      window.location.href='/page2'
+      window.location.href='/page10'
     } else {
       window.location.href="/page12"
     }

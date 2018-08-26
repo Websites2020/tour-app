@@ -19,16 +19,30 @@ function getData() {
     {
        $("#listings").append(`
         <div class="card" style="box-shadow: 10px 10px grey;">
-        <h5 class="card-header"><b>City:</b> ${arr[i].city}<br><b>State/Country:</b> ${arr[i].country}</h5>
+        <h5 class="card-header bg-info"><b>City:</b> ${arr[i].city}<span class="flag"><br><b>State/Country:</b> ${arr[i].country}</h5>
         <div class="card-body">
-        <div style="list-style-type: none;" class="card-text">
+        <div class="card-text">
+        <div class="row">
+        <div class="col-md-9">
         <p><b>Description:</b> ${arr[i].description}<br><b>Number of People:</b> ${arr[i].people}<br><b>Date:</b> <span class="helperText">(YYYY/MM/DD)</span> ${arr[i].date}<br><b>Time:</b> ${arr[i].time}<br><b>Offer:</b> <span class="helperText">(in local currency)</span> ${arr[i].budget}.00</p>
         </div>
-        <button id='myBtn${arr[i].tourID}' value='${arr[i].email}' href="#" class="btn btn-primary">Contact</button>
+        <br>
+        <h6><b>Login as a Local Guide to contact this Tourist</b></h6>
+        </div>
+        <div class="col-md-3">
+            <img style="float: right;" src="https://www.mapquestapi.com/staticmap/v5/map?key=Zs2Sg9rdlJl0tdV45Tu8tGlbj0QkyOJI&center=${arr[i].city},${arr[i].country}&size=200,200" srcset="https://www.mapquestapi.com/staticmap/v5/map?key=Zs2Sg9rdlJl0tdV45Tu8tGlbj0QkyOJI&center=${arr[i].city},${arr[i].country}&size=200,200@2x 2x">
+        </div>
+        </div>
         </div>
         </div>
         <br>
         `);
+
+        $.getJSON("./codes.json", function(codes){
+            code = codes[`${arr[i].country}`]
+            
+            $('.flag').append(`<img src="https://www.countryflags.io/${code}/flat/64.png" />`)
+            });
         
         var btn = document.getElementById(`myBtn${arr[i].tourID}`);
         var span = document.getElementsByClassName("close")[0];

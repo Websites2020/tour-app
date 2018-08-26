@@ -60,6 +60,10 @@ body {
     font-size: 35px;
 }
 
+.tm {
+    font-size: 20px;
+}
+
 #clickHere {
     text-align: center;
 }
@@ -118,6 +122,10 @@ footer {
     position: fixed;
     bottom: 0%;
     width: 100%;
+}
+
+.flag {
+    float: right;
 }
 
 input {
