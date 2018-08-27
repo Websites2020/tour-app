@@ -78,7 +78,7 @@ Your message to the poster:<br>
 </div>
 
 </body>
-<footer><hr>&nbsp;Daniel Button &copy; 2018<span class="ourEmail">Questions, Comments, Help? Contact: tourwithalocal.us@gmail.com</span></footer>
+<footer><hr>&nbsp;Tour With a Local &copy; 2018<span class="ourEmail">Questions, Comments, Help? Contact: tourwithalocal.us@gmail.com</span></footer>
 </html>`)
 
 $.get("/show", function(data, status){

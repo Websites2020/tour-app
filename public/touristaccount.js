@@ -60,7 +60,7 @@ function loadTourist() {
         <input style="font-size: 18px;" id="time" type="time" name="time" required><br>
         <b>Posting Details:</b><br>
         What is the best contact email?<br>
-        <input style="font-size: 18px;" id="email" type="email" name="email" maxlength="99" required><span class="helperText2">(publicly displayed)</span><br>
+        <input style="font-size: 18px;" id="email" type="email" name="email" maxlength="99" required><br>
         How much do you want to offer your Local Guide?<br>
         <input style="font-size: 18px;" id="offer" type="number" name="budget" min="1" max="99999" required><span class="helperText2">(in visting country's currency)</span><br><br>
         <!-- <button type="button" onclick="store()">Submit</button> -->
@@ -74,7 +74,7 @@ function loadTourist() {
             </div>
         </div>
     </div>
-    <footer><hr>&nbsp;Daniel Button &copy; 2018<span class="ourEmail">Questions, Comments, Help? Contact: tourwithalocal.us@gmail.com</span></footer>`
+    <footer><hr>&nbsp;Tour With a Local &copy; 2018<span class="ourEmail">Questions, Comments, Help? Contact: tourwithalocal.us@gmail.com</span></footer>`
     )
 
     $.post("/showTAcc", {usrID: data[0].userID}, function(data2, status){
