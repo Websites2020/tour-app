@@ -65,11 +65,11 @@ $("#lLoad").append(`<div class="row">
 
 <div class="modal-content">
 <span class="close">&times;</span>
-<h2>Contact the poster</h2>
+<h2>Send an email to this Tourist</h2>
 <form style="font-size: 18px;" onsubmit="send()" action="#" method="GET" id="sendEmail" enctype="text/plain">
 Email Subject:<br>
 <input style="font-size: 18px; width: 100%;" name="subject" type="text" /><br>
-Your message to the poster:<br>
+Your message to this person:<br>
 <textarea style="font-size: 18px; width: 100%;" id="sendM" name="body" cols="60" rows="7" maxlength="799" required></textarea><br>
 <input class="btn btn-primary" type="submit" value="Send">
 </form>
@@ -95,8 +95,8 @@ $.get("/show", function(data, status){
    <div class="card-text">
        <div class="row">
            <div class="col-md-9">
-   <p><b>Description:</b> ${arr[i].description}<br><b>Number of People:</b> ${arr[i].people}<br><b>Date:</b> <span class="helperText">(YYYY/MM/DD)</span> ${arr[i].date}<br><b>Time:</b> ${arr[i].time}<br><b>Offer:</b> <span class="helperText">(in local currency)</span> ${arr[i].budget}.00</p>
-   <button id='myBtn${arr[i].tourID}' value='${arr[i].email}' href="#" class="btn btn-warning">Contact the Poster</button>
+           <p><b>I would like to go to or/and see:</b> ${arr[i].description}<br><b>The number of people on this tour is:</b> ${arr[i].people}<br><b>Tour Date:</b> ${arr[i].date} <span class="helperText">(YYYY/MM/DD)</span><br><b>Tour Time:</b> ${arr[i].time}<br><b>Offering:</b>  ${arr[i].budget}.00 <span class="helperText">(in local currency)</span></p>
+   <button id='myBtn${arr[i].tourID}' value='${arr[i].email}' href="#" class="btn btn-warning">Contact this Tourist</button>
            </div>
            <div class="col-md-3">
    <img style="float: right;" src="https://www.mapquestapi.com/staticmap/v5/map?key=Zs2Sg9rdlJl0tdV45Tu8tGlbj0QkyOJI&center=${arr[i].city},${arr[i].country}&size=200,200" srcset="https://www.mapquestapi.com/staticmap/v5/map?key=Zs2Sg9rdlJl0tdV45Tu8tGlbj0QkyOJI&center=${arr[i].city},${arr[i].country}&size=200,200@2x 2x">

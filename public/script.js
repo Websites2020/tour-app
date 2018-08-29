@@ -24,8 +24,8 @@ function getData() {
        <div class="card-text">
            <div class="row">
                <div class="col-md-9">
-       <p><b>Description:</b> ${arr[i].description}<br><b>Number of People:</b> ${arr[i].people}<br><b>Date:</b> <span class="helperText">(YYYY/MM/DD)</span> ${arr[i].date}<br><b>Time:</b> ${arr[i].time}<br><b>Offer:</b> <span class="helperText">(in local currency)</span> ${arr[i].budget}.00</p>
-       <button href="/page6" class="btn btn-warning">Login as a Local Guide to contact this poster</button>
+       <p><b>I would like to go to or/and see:</b> ${arr[i].description}<br><b>The number of people on this tour is:</b> ${arr[i].people}<br><b>Tour Date:</b> ${arr[i].date} <span class="helperText">(YYYY/MM/DD)</span><br><b>Tour Time:</b> ${arr[i].time}<br><b>Offering:</b>  ${arr[i].budget}.00 <span class="helperText">(in local currency)</span></p>
+       <button href="/page6" class="btn btn-warning">Login as a Local to contact this person</button>
                </div>
                <div class="col-md-3">
        <img style="float: right;" src="https://www.mapquestapi.com/staticmap/v5/map?key=Zs2Sg9rdlJl0tdV45Tu8tGlbj0QkyOJI&center=${arr[i].city},${arr[i].country}&size=200,200" srcset="https://www.mapquestapi.com/staticmap/v5/map?key=Zs2Sg9rdlJl0tdV45Tu8tGlbj0QkyOJI&center=${arr[i].city},${arr[i].country}&size=200,200@2x 2x">
