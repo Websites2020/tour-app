@@ -14,15 +14,15 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 var con = mysql.createConnection({
-  host: process.env.RDS_HOSTNAME,
-  user: process.env.RDS_USERNAME,
-  password: process.env.RDS_PASSWORD,
-  port: process.env.RDS_PORT,
-  database: "ebdb"
-  // host: "localhost",
-  // user: "root",
-  // password: "",
-  // database: "toursDB"
+  // host: process.env.RDS_HOSTNAME,
+  // user: process.env.RDS_USERNAME,
+  // password: process.env.RDS_PASSWORD,
+  // port: process.env.RDS_PORT,
+  // database: "ebdb"
+  host: "localhost",
+  user: "root",
+  password: "",
+  database: "toursDB"
 });
 
 // Add headers
@@ -115,6 +115,21 @@ app.get('/test',function(req,res){
   app.use(express.static(__dirname + '/public'));
 });
 
+app.get('/reading',function(req,res){
+  res.sendfile("public/reading.html");
+  app.use(express.static(__dirname + '/public'));
+});
+
+app.get('/b',function(req,res){
+  res.sendfile("public/indexb.html");
+  app.use(express.static(__dirname + '/public'));
+});
+
+app.get('/thankyou',function(req,res){
+  res.sendfile("public/thankyou.html");
+  app.use(express.static(__dirname + '/public'));
+});
+
 con.connect(function(err) {
 
 app.post('/insert', function(req, res) {
@@ -133,7 +148,7 @@ app.post('/insert', function(req, res) {
       if (err) throw err;
       // console.log("1 record inserted");
     });
-  res.sendfile("public/index.html");
+  res.sendfile("public/thankyou.html");
   app.use(express.static(__dirname + '/public'));
 })
 
@@ -245,7 +260,7 @@ app.post('/insertAcc', function(req, res) {
     if (err) throw err;
     // console.log("1 record inserted");
   });
-  res.sendfile("public/index.html");
+  res.sendfile("public/thankyou.html");
   app.use(express.static(__dirname + '/public'));
 })
 

@@ -1,13 +1,13 @@
 // var arr;
 
+if ( window.history.replaceState ) {
+    window.history.replaceState( null, null, window.location.href );
+}
+
 $('.carousel').carousel({
     interval: 10,
     pause: false
   })
-
-function tourReq() {
-    alert("Your tour request has been made.  Thank you.  We are now using are patented system in finding Locals to be your tour guide.")
-}
 
 function getData() {
     $.get("/show", function(data, status){
@@ -19,12 +19,12 @@ function getData() {
     {
        $("#listings").append(`
        <div class="card" style="box-shadow: 10px 10px grey;">
-       <h5 class="card-header bg-info"><b>City:</b> ${arr[i].city}<br><b>State/Country:</b> ${arr[i].country}</h5>
+       <h5 style="color: white" class="card-header bg-primary">${arr[i].city}, ${arr[i].country}</h5>
        <div class="card-body">
        <div class="card-text">
            <div class="row">
                <div class="col-md-9">
-       <p><b>I would like to go to or/and see:</b> ${arr[i].description}<br><b>The number of people on this tour is:</b> ${arr[i].people}<br><b>Tour Date:</b> ${arr[i].date} <span class="helperText">(YYYY/MM/DD)</span><br><b>Tour Time:</b> ${arr[i].time}<br><b>Offering:</b>  ${arr[i].budget}.00 <span class="helperText">(in local currency)</span></p>
+       <p><b>I would like to go to or/and see:</b> ${arr[i].description}<br><b>The number of people on this tour is:</b> ${arr[i].people}<br><b>Tour Date:</b> ${arr[i].date} <span class="helperText">(YYYY/MM/DD)</span><br><b>Tour Time:</b> ${arr[i].time}<br><b>My budget is:</b>  ${arr[i].budget}.00 <span class="helperText">(in local currency)</span></p>
        <button href="/page6" class="btn btn-warning">Login as a Local to contact this person</button>
                </div>
                <div class="col-md-3">

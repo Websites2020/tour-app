@@ -11,23 +11,9 @@ $("#lLoad").append(`<div class="row">
 <div class="col-md-12">
     <header>
         <nav class="navbar">
-        <span class="title"><a href="/"><img src="./images/logo.png" height="60px" alt="logo"></a><span class="tm">&trade;</span></span>
+        <span class="title"><img src="./images/logo.png" height="50px" alt="logo"><span class="tm">&trade;</span></span>
             <ul class="nav justify-content-end">
-                <!-- <li class="nav-item">
-                    <a class="nav-link" href="/">Home</a>
-                </li> -->
-                <li class="nav-item">
-                    <a class="nav-link" href="/page1">Post</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/page2">Search</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="page4">How it Works</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/page3">Sign Up</a>
-                </li>
+                
                 <li class="nav-item">
                     <a class="nav-link" onclick="logOutb()" href="#">Log Out</a>
                 </li>
@@ -71,7 +57,7 @@ Email Subject:<br>
 <input style="font-size: 18px; width: 100%;" name="subject" type="text" /><br>
 Your message to this person:<br>
 <textarea style="font-size: 18px; width: 100%;" id="sendM" name="body" cols="60" rows="7" maxlength="799" required></textarea><br>
-<input class="btn btn-primary" type="submit" value="Send">
+<input class="btn btn-primary" type="submit" value="Create Email">
 </form>
 </div>
 
@@ -90,12 +76,12 @@ $.get("/show", function(data, status){
 {
    $("#listings").append(`
    <div class="card" style="box-shadow: 10px 10px grey;">
-   <h5 class="card-header bg-info"><b>City:</b> ${arr[i].city}<br><b>State/Country:</b> ${arr[i].country}</h5>
+   <h5 style="color: white" class="card-header bg-primary">${arr[i].city}, ${arr[i].country}</h5>
    <div class="card-body">
    <div class="card-text">
        <div class="row">
            <div class="col-md-9">
-           <p><b>I would like to go to or/and see:</b> ${arr[i].description}<br><b>The number of people on this tour is:</b> ${arr[i].people}<br><b>Tour Date:</b> ${arr[i].date} <span class="helperText">(YYYY/MM/DD)</span><br><b>Tour Time:</b> ${arr[i].time}<br><b>Offering:</b>  ${arr[i].budget}.00 <span class="helperText">(in local currency)</span></p>
+           <p><b>I would like to go to or/and see:</b> ${arr[i].description}<br><b>The number of people on this tour is:</b> ${arr[i].people}<br><b>Tour Date:</b> ${arr[i].date} <span class="helperText">(YYYY/MM/DD)</span><br><b>Tour Time:</b> ${arr[i].time}<br><b>My Budget is:</b>  ${arr[i].budget}.00 <span class="helperText">(in local currency)</span></p>
    <button id='myBtn${arr[i].tourID}' value='${arr[i].email}' href="#" class="btn btn-warning">Contact this Tourist</button>
            </div>
            <div class="col-md-3">

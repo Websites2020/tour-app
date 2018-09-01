@@ -6,8 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Tour With a Local -- How it works</title>
 
-    
-
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 
@@ -29,16 +27,16 @@
             <div class="col-md-12">
                 <header>
                     <nav class="navbar">
-                    <span class="title"><a href="/"><img src="./images/logo.png" height="60px" alt="logo"></a><span class="tm">&trade;</span></span>
+                    <span class="title"><a href="/"><img src="./images/logo.png" height="50px" alt="logo"></a><span class="tm">&trade;</span></span>
                         <ul class="nav justify-content-end">
                             <!-- <li class="nav-item">
                                 <a class="nav-link" href="/">Home</a>
                             </li> -->
-                            <li class="nav-item">
+                            <!-- <li class="nav-item">
                                 <a class="nav-link" href="/page1">Post</a>
-                            </li>
+                            </li> -->
                             <li class="nav-item">
-                                <a class="nav-link" href="/page2">Search</a>
+                                <a class="nav-link" href="/page2">Become a Tour Guide</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="page4">How it Works</a>
@@ -81,9 +79,16 @@
                     3) Carry little cash.  Use an ATM if you need to get more.<br>
                     <!-- <button class="btn btn-primary" onclick="signup()">Sign up</button> -->
                 </p>
+                <br>
+                <button type="button" onclick="goBack()" class="btn btn-default">Go Back</button>
             </div>
         </div>
     </div>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+        </script> 
 </body>
 <footer><hr>&nbsp;Tour With a Local &copy; 2018<span class="ourEmail">Questions, Comments, Help? Contact: tourwithalocal.us@gmail.com</span></footer>
 </html>

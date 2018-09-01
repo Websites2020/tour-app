@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Tour With a Local -- Local Log In</title>
+    <title>Tour With A Local -- Home</title>
 
     
 
@@ -22,24 +22,23 @@
 
     <link rel="stylesheet" href="./style.css">
     <script src="./script.js"></script>
-    <script src="./login.js"></script>
 
 </head>
-<body class="loginBody">
+<body>
         <div class="row">
             <div class="col-md-12">
                 <header>
                     <nav class="navbar">
-                    <span class="title"><a href="/"><img src="./images/logo.png" height="50px" alt="logo"></a><span class="tm">&trade;</span></span>
+                    <span class="title"><a href="/"><img src="./images/logo.png" height="60px" alt="logo"></a><span class="tm">&trade;</span></span>
                         <ul class="nav justify-content-end">
                             <!-- <li class="nav-item">
                                 <a class="nav-link" href="/">Home</a>
                             </li> -->
-                            <!-- <li class="nav-item">
-                                <a class="nav-link" href="/page1">Post</a>
-                            </li> -->
                             <li class="nav-item">
-                                <a class="nav-link" href="/page2">Become a Tour Guide</a>
+                                <a class="nav-link" href="/page1">Post</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/page2">Search</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="page4">How it Works</a>
@@ -60,27 +59,42 @@
                         </ul>
                     </nav>
                 </header>
+                </div>
             </div>
-        </div>
-        <br>
-        <div class="container">
-        <div class="row">
-            <div class="col-md-4"></div>
-            <div class="col-md-4">
-                <h3 class="loginTitle">Log in as a Local Guide.</h3>
-                <br>
-                <form style="font-size: 18px;" onsubmit="localLog()">
-                    Username:<br>
-                    <input id="lUsrName" style="font-size: 18px; width: 100%;" type="text" required><br>
-                    Password:<br>
-                    <input id="lUsrPass" style="font-size: 18px; width: 100%;" type="password" required><br><br>
-                    <div class="loginButton"><input class="btn btn-info" style="width: 100%" type="submit" value="Log In"></div>
-                </form>
-            </div>
-            <div class="col-md-4"></div>
-        </div>
-    </div>
+    <!-- <div class="container-fluid"> -->
+        <div class="home">
+                <!-- <br><br><br><br><br><br> -->
+            <div id="buttonGroup">
+                    <div class="row">
+                            <div class="col-md-2"></div>
+                        <div class="col-md-4">
+                            <button class="btn btn-success btn-lg titleButton" onclick="window.location.href='/page1'">Post a Tour Request</button>
+                        </div>                        
+                        <div class="col-md-4">
+                            <button class="btn btn-info btn-lg titleButton" onclick="window.location.href='/page2'">Search Tour Requests</button>
+                            <br>
+                        </div>
+                        <div class="col-md-2"></div>
+                    </div>
+                </div>
+                
+            </div> <!--end home class-->
+            <br><br><br>
+            <div class="row">     
+                    <div class="col-md-12">
+                        <h2 id="indexDescription">Create your own travel experiences with <b>Tour With a Local</b>.</h2><br><br><h4 id="indexDescription2">Start by clicking either the green button, if you're a Tourist, or the blue button, if you want to be a Local Guide.</h4>
+                    </div>
+                </div>
+                <br><br>
+                <div class="row home2">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-8">
+                        <h4 id="clickHere">Click <a href="/page4">here</a> to learn how <b>Tour With a Local</b> works.</h4>
+                    </div>
+                    <div class="col-md-2"></div>
+                </div>
+                
+    <!-- </div> -->
 </body>
-<br><br>
-<footer class="footer"><br>&nbsp;Tour With a Local &copy; 2018<span class="ourEmail">Questions, Comments, Help? Contact: tourwithalocal.us@gmail.com</span></footer>
+    <footer><hr>&nbsp;Tour With a Local &copy; 2018<span class="ourEmail">Questions, Comments, Help? Contact: tourwithalocal.us@gmail.com</span></footer>
 </html>
